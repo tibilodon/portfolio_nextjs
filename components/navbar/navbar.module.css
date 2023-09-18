@@ -1,0 +1,12 @@
+.wrap {
+  border: 2px solid red;
+  min-height: 3em;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #b6b6b6;
+}
+.sidebar {
+  border: 3px solid green;
+}

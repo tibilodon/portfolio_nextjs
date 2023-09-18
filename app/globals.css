@@ -2,4 +2,11 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-decoration: none;
+}
+.content {
+  border: 6px solid black;
+  width: 100%;
+  margin-top: 3em;
+  height: calc(100vh - 3em);
 }
