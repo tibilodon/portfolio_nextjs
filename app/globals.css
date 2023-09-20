@@ -3,10 +3,27 @@
   padding: 0;
   margin: 0;
   text-decoration: none;
+  background-color: #ffffff;
 }
 .content {
-  border: 6px solid black;
   width: 100%;
   margin-top: 3em;
   height: calc(100vh - 3em);
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-top: 0;
+    /* height: 100vh; */
+  }
+  .mobileNav {
+    display: flex;
+  }
+  .regularNav {
+    display: none;
+  }
 }

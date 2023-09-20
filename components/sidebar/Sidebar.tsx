@@ -1,64 +1,66 @@
 "use client";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { createCookie, getCookie } from "@/utils/cookieActions";
 import styles from "./sidebar.module.css";
 
-// const Sidebar: React.FunctionComponent = () => {
-//   const [show, setShow] = useState(false);
-//   const sidebarHandler = (): void => setShow(!show);
-//   return (
-//     <>
-//       {/* <!-- Trigger/Open The Modal -->*/}
-//       <button onClick={() => setShow(!show)}>Open Sidebar</button>
-
-//       {/*
-// <!-- The Modal -->*/}
-//       <div
-//         onClick={() => setShow(!show)}
-//         className={!show ? styles.modal : styles.open}
-//       >
-//         {/*  <!-- Modal content -->*/}
-//         <div className={styles.modalContent}>
-//           <p>Please add sidebar items..</p>
-//           {/* <span onClick={() => setShow(!show)} className={styles.close}>
-//             x close
-//           </span> */}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Sidebar;
-
+type LangOption = "hun" | "eng";
 type SidebarProps = {
-  sidebar: boolean;
-  setSidebar: (sidebar: boolean) => void;
+  lang: LangOption;
+  setLang: (lang: LangOption) => void;
 };
 
-const Sidebar: React.FunctionComponent<SidebarProps> = ({
-  sidebar,
-  setSidebar,
-}) => {
-  const [open, setOpen] = useState<boolean>(false);
+const Sidebar: React.FunctionComponent<SidebarProps> = ({ lang, setLang }) => {
+  // const [lang, setLang] = useState<LangOption>("eng");
+  // useEffect(() => {
+  //   const awaitCookie = async () => {
+  //     const language = await getCookie("lang");
+  //     if (language?.value) {
+  //       setLang(language.value as LangOption);
+  //     } else {
+  //       setLang("eng");
+  //     }
+  //     console.log(language);
+  //   };
+  //   awaitCookie();
+  // }, []);
 
-  const handler = useCallback(() => {
-    setSidebar(!sidebar);
-  }, [sidebar, setSidebar]);
+  // const handler = (val: LangOption): void => {
+  //   setLang(val);
+  //   createCookie("lang", val);
+  // };
+
+  const handler = useCallback(
+    (val: LangOption) => {
+      setLang(val);
+    },
+    [lang, setLang]
+  );
 
   return (
     <>
       <div className={styles.wrap}>
-        <button onClick={handler}>open sidebar</button>
-
-        {sidebar ? (
-          <>
-            {" "}
-            <h1>sidar item</h1>
-            <h1>sidar item</h1>
-            <h1>sidar item</h1>
-            <h1>sidar item</h1>
-          </>
-        ) : null}
+        <>
+          <h1>sidar item</h1>
+          <h1>sidar item</h1>
+          <h1>sidar item</h1>
+          <h1>sidar item</h1>
+          <button
+            className={
+              lang === "hun" ? styles.buttonActive : styles.buttonInactive
+            }
+            onClick={() => handler("hun")}
+          >
+            hun
+          </button>
+        </>
+        <button
+          className={
+            lang === "eng" ? styles.buttonActive : styles.buttonInactive
+          }
+          onClick={() => handler("eng")}
+        >
+          eng
+        </button>
       </div>
     </>
   );
