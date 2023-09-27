@@ -13,10 +13,10 @@
   align-items: center;
   /* background-color: #b6b6b6; */
 }
-.sidebar {
+/* .sidebar {
   border: 3px solid green;
   margin-left: 1em;
-}
+} */
 .items {
   border: 2px solid purple;
   min-width: 50%;

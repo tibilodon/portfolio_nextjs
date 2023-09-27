@@ -10,9 +10,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model details{
+  id Int @id @default(autoincrement())
+  heading String @db.VarChar(50)
+  profession String @db.VarChar(50)
+  email String @db.VarChar(50)
+  phone String @db.VarChar(50)
+  
+  lang Language @default(ENG)
+
+  @@unique([heading,profession,email,phone, lang])
+}
+
+
+
 model logs{
   id Int @id @default(autoincrement())
   title String @db.VarChar(250)
   file_name String @db.VarChar(50)
   line_number Int
+}
+
+enum Language{
+  ENG
+  HUN
 }

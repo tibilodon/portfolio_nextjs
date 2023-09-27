@@ -1,0 +1,24 @@
+.wrap {
+  /* border-bottom: 1px solid #333; */
+}
+.inactive {
+  margin-left: 1em;
+  padding: 0.5em;
+  color: #929292;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: ease-in;
+  transition-duration: 0.3s;
+}
+.inactive:hover {
+  border-bottom: 1px solid #333;
+  color: #333;
+}
+.active {
+  border-bottom: 1px solid #333;
+  color: #333;
+  margin-left: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}

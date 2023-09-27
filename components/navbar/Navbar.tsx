@@ -24,13 +24,18 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
   const handler = useCallback(() => {
     setSidebar(!sidebar);
   }, [sidebar, setSidebar]);
+
+  const killme: React.CSSProperties = {
+    backgroundColor: "red",
+    padding: "1em",
+  };
   return (
     <>
       <div
         className={styles.wrap}
         onClick={sidebar === true ? handler : undefined}
       >
-        <div className={styles.sidebar}>
+        <div>
           {!sidebar ? (
             <Image onClick={handler} src={menu_icon} alt="menu icon" />
           ) : null}
@@ -51,9 +56,19 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
           <Link href="/" as="/">
             <button>Home</button>
           </Link>
+          <Link href="/test" as="/test">
+            <button style={killme}>test</button>
+          </Link>
         </div>
       </div>
-      {sidebar ? <Sidebar lang={lang} setLang={setLang} /> : null}
+      {sidebar ? (
+        <Sidebar
+          lang={lang}
+          setLang={setLang}
+          sidebar={sidebar}
+          setSidebar={setSidebar}
+        />
+      ) : null}
     </>
   );
 };

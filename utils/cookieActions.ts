@@ -6,7 +6,7 @@ const createCookie = async (name: string, value: string): Promise<void> => {
 };
 
 //add returned type
-const getCookie = async (name: string) => {
+const getCookie = async (name: string): Promise<any> => {
   const cookieStore = cookies();
   const language = cookieStore.get(name);
   return language;

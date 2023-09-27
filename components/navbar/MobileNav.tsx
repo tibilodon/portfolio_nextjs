@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import menu_icon from "@/public/icons/menu.svg";
 import Sidebar from "../sidebar/Sidebar";
+import home_icon from "@/public/icons/home.svg";
+import message_icon from "@/public/icons/message.svg";
 
 type LangOption = "hun" | "eng";
 
@@ -30,17 +32,39 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
         onClick={sidebar === true ? handler : undefined}
         className={styles.wrap}
       >
-        {!sidebar ? (
-          <Image onClick={handler} src={menu_icon} alt="menu icon" />
-        ) : null}
-        <Link href="/" as="/">
-          <button>Home</button>
-        </Link>
-        <Link href="/about" as="/about">
+        <div>
+          {!sidebar ? (
+            <Image
+              width={30}
+              height={30}
+              onClick={handler}
+              src={menu_icon}
+              alt="menu icon"
+            />
+          ) : null}
+        </div>
+        <div className={styles.items}>
+          <Link href="/contact" as="/contact">
+            <Image
+              width={25}
+              height={25}
+              src={message_icon}
+              alt="message icon"
+            />
+          </Link>
+        </div>
+        {/* <Link href="/about" as="/about">
           <button>About</button>
-        </Link>
+        </Link> */}
       </div>
-      {sidebar ? <Sidebar lang={lang} setLang={setLang} /> : null}
+      {sidebar ? (
+        <Sidebar
+          lang={lang}
+          setLang={setLang}
+          sidebar={sidebar}
+          setSidebar={setSidebar}
+        />
+      ) : null}
     </>
   );
 };
