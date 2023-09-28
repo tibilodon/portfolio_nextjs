@@ -1,8 +1,8 @@
 "use client";
 import styles from "./scrollWrap.module.css";
 import { useState, useEffect, useRef } from "react";
-import useBooleanState from "@/utils/setActive";
-import React, { ReactNode } from "react";
+// import React, { ReactNode } from "react";
+import { usePath } from "@/utils/activeContext";
 
 type ScrollWrapProps = {
   children: React.ReactNode;
@@ -13,18 +13,51 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
   children,
   text,
 }) => {
-  //   console.log(text);
-  const { toggle, value } = useBooleanState(false);
+  const {
+    setHomePath,
+    setAboutPath,
+    setProjectPath,
+    setWorkPath,
+    setContactPath,
+  } = usePath();
   const [isIntersecting, setIsIntersecting] = useState(false);
   const targetRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         // The callback function will be called whenever the observed element enters or exits the viewport
-        //TODO: here you can select the component and set the active route
-        console.log("see", text, entry.isIntersecting);
-        setIsIntersecting(entry.isIntersecting);
-        toggle();
+        const interSecting: boolean = entry.isIntersecting;
+        // if (text === "home" && interSecting) {
+        //   setHomePath();
+        // }
+        // if (text === "about" && interSecting) {
+        //   setAboutPath();
+        // }
+        // if (text === "project" && interSecting) {
+        //   setProjectPath();
+        // }
+        switch (text) {
+          case "home":
+            interSecting && setHomePath();
+            break;
+          case "about":
+            interSecting && setAboutPath();
+            break;
+          case "project":
+            interSecting && setProjectPath();
+            break;
+          case "work":
+            interSecting && setWorkPath();
+            break;
+          case "contact":
+            interSecting && setContactPath();
+            break;
+
+          default:
+            break;
+        }
+
+        setIsIntersecting(interSecting);
       },
       {
         // Options for the IntersectionObserver
@@ -43,7 +76,7 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
       observer.disconnect();
     };
   }, []);
-  console.log(text);
+  // console.log("the value is:", value);
 
   //   if (React.isValidElement(children)) {
   //     console.log(children.props.children[0].props);

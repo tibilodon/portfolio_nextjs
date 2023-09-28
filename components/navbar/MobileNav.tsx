@@ -7,7 +7,7 @@ import menu_icon from "@/public/icons/menu.svg";
 import Sidebar from "../sidebar/Sidebar";
 import home_icon from "@/public/icons/home.svg";
 import message_icon from "@/public/icons/message.svg";
-
+import { usePath } from "@/utils/activeContext";
 type LangOption = "hun" | "eng";
 
 type MobileNavProps = {
@@ -23,6 +23,7 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
   lang,
   setLang,
 }) => {
+  const { pathMatchRoute } = usePath();
   const handler = useCallback(() => {
     setSidebar(!sidebar);
   }, [sidebar, setSidebar]);
@@ -43,7 +44,7 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
             />
           ) : null}
         </div>
-        <div className={styles.items}>
+        <div className={styles.items} onClick={pathMatchRoute}>
           <Link href="/contact" as="/contact">
             <Image
               width={25}

@@ -6,6 +6,8 @@ import back_icon from "@/public/icons/back.svg";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import PathButton from "../buttons/pathButton/PathButton";
+//when nav happens on sidebar, active path will be gathered from pathName, therefore sate will be set to an empty string
+import { usePath } from "@/utils/activeContext";
 
 type LangOption = "hun" | "eng";
 type SidebarProps = {
@@ -22,6 +24,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
   setSidebar,
 }) => {
   const pathname = usePathname();
+  const { pathMatchRoute } = usePath();
   console.log("PATHNAME", pathname);
   const handler = useCallback(
     (val: LangOption) => {
@@ -43,7 +46,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
           alt="back icon"
           className={styles.backBtn}
         />
-        <div className={styles.items}>
+        <div className={styles.items} onClick={pathMatchRoute}>
           <Link onClick={collapseHandler} href={"/"} as={"/"}>
             <PathButton label="Home" pathname={pathname} />
           </Link>

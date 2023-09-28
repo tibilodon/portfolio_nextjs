@@ -11,6 +11,9 @@ import { createCookie, getCookie } from "@/utils/cookieActions";
 import SidebarButton from "@/components/buttons/sidebarButton/SidebarButton";
 import Loading from "./loading";
 
+//context
+import ActivePathProvider from "@/utils/activeContext";
+
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -53,42 +56,45 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.className}>
-        <div className={"regularNav"}>
-          <Navbar
-            sidebar={sidebar}
-            setSidebar={setSidebar}
-            lang={lang}
-            setLang={setLang}
-          />
-        </div>
-        <div className={"mobileNav"}>
-          {/*TODO:  mobile navbar on the bottom of the page*/}
-          <MobileNav
-            sidebar={sidebar}
-            setSidebar={setSidebar}
-            lang={lang}
-            setLang={setLang}
-          />
-          {/* <div onClick={sidebarHandler}>
-            <MessageButton />
+        <ActivePathProvider>
+          <div className={"regularNav"}>
+            <Navbar
+              sidebar={sidebar}
+              setSidebar={setSidebar}
+              lang={lang}
+              setLang={setLang}
+            />
           </div>
-          <SidebarButton
+          <div className={"mobileNav"}>
+            {/*TODO:  mobile navbar */}
+            <MobileNav
+              sidebar={sidebar}
+              setSidebar={setSidebar}
+              lang={lang}
+              setLang={setLang}
+            />
+            {/* <div onClick={sidebarHandler}>
+            <MessageButton />
+            </div>
+            <SidebarButton
             lang={lang}
             setLang={setLang}
             sidebar={sidebar}
             setSidebar={setSidebar}
           /> */}
-        </div>
-        <Suspense fallback={<Loading />}>
-          <div
-            onClick={sidebarHandler}
-            onWheel={sidebarHandler}
-            onScroll={sidebarHandler}
-            className="content"
-          >
-            {children}
           </div>
-        </Suspense>
+
+          <Suspense fallback={<Loading />}>
+            <div
+              onClick={sidebarHandler}
+              onWheel={sidebarHandler}
+              onScroll={sidebarHandler}
+              className="content"
+            >
+              {children}
+            </div>
+          </Suspense>
+        </ActivePathProvider>
       </body>
     </html>
   );

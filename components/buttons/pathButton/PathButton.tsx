@@ -1,4 +1,7 @@
+"use client";
 import styles from "./pathButton.module.css";
+
+import { usePath } from "@/utils/activeContext";
 type PathButtonProps = {
   pathname: string;
   label: string;
@@ -13,8 +16,6 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
 
     const resultString = pathname.replace("/", "");
 
-    console.log(resultString); // Output: "contact"
-
     if (resultString === label.toLocaleLowerCase()) {
       return (style = "active");
     }
@@ -24,12 +25,40 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
       return (style = "inactive");
     }
   };
-  //if pathname === label.toLowercase=>active|inactive
 
+  const { path } = usePath();
+  const markActive = (): string => {
+    let style: string;
+    switch (label) {
+      case "Home":
+        style = path === "/" ? "active" : "inactive";
+        break;
+      case "About":
+        style = path === "/about" ? "active" : "inactive";
+        break;
+      case "Project":
+        style = path === "/project" ? "active" : "inactive";
+        break;
+      case "Work":
+        style = path === "/work" ? "active" : "inactive";
+        break;
+      case "Contact":
+        style = path === "/contact" ? "active" : "inactive";
+        break;
+
+      default:
+        style = "inactive";
+        break;
+    }
+    return style;
+  };
+  console.log("PATH VALUE:", path);
   return (
     <>
       <div className={styles.wrap}>
-        <h1 className={styles[checkIsActive()]}>{label}</h1>
+        <h1 className={styles[path ? markActive() : checkIsActive()]}>
+          {label}
+        </h1>
       </div>
     </>
   );

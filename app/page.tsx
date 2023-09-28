@@ -52,24 +52,32 @@ export default async function Home() {
       <Suspense fallback={<Loading />}>
         {result !== null ? (
           <>
-            <div className={styles.wrap}>
-              <div className={styles.text}>
-                <h1>{result.heading}</h1>
-                <h1>{result.profession}</h1>
+            <ScrollWrap text={"home"}>
+              <div className={styles.wrap}>
+                <div className={styles.text}>
+                  <h1>{result.heading}</h1>
+                  <h1>{result.profession}</h1>
+                </div>
+                <Image
+                  className={styles.image}
+                  //  height={604} width={395}
+                  src={portrait}
+                  alt="portrait picture"
+                  priority
+                />
               </div>
-              <Image
-                className={styles.image}
-                //  height={604} width={395}
-                src={portrait}
-                alt="portrait picture"
-                priority
-              />
-            </div>
+            </ScrollWrap>
             <ScrollWrap text={"about"}>
               <About />
             </ScrollWrap>
             <ScrollWrap text={"project"}>
               <Project />
+            </ScrollWrap>
+            <ScrollWrap text={"work"}>
+              <Work />
+            </ScrollWrap>
+            <ScrollWrap text={"contact"}>
+              <Contact />
             </ScrollWrap>
           </>
         ) : (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useBooleanState(initialState = false) {
+export default function useActivePath(initialState = false) {
   const [value, setValue] = useState(initialState);
 
   const setTrue = () => setValue(true);
