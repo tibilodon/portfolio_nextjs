@@ -1,10 +1,11 @@
 .wrap {
+  /* width: 3em; */
   /* border-bottom: 1px solid #333; */
 }
 .inactive {
-  margin-left: 1em;
-  padding: 0.5em;
-  color: #929292;
+  /* margin-left: 1em; */
+  /* padding: 0.5em; */
+  color: var(--inactive);
   font-weight: 600;
   cursor: pointer;
   border-bottom: 1px solid transparent;
@@ -12,13 +13,14 @@
   transition-duration: 0.3s;
 }
 .inactive:hover {
-  border-bottom: 1px solid #333;
-  color: #333;
+  /* border-bottom: 1px solid #333; */
+  color: var(--black);
+  padding: 0 0.5em 0 0.5em;
 }
 .active {
-  border-bottom: 1px solid #333;
-  color: #333;
-  margin-left: 1em;
+  border-bottom: 1px solid var(--black);
+  color: var(--black);
+  /* margin-left: 1em; */
   font-weight: 600;
   cursor: pointer;
 }

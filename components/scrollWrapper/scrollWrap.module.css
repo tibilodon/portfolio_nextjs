@@ -1,9 +1,12 @@
 .wrap {
-  display: grid;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  /* display: grid;
   place-items: center;
-  align-content: center;
-  min-width: 100%;
-  min-height: calc(100vh - 2.5em);
+  align-content: center; */
+  /* min-width: 100%;
+  min-height: calc(100vh - 2.5em); */
 }
 
 .hidden {

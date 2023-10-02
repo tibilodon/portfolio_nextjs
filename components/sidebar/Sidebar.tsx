@@ -8,8 +8,12 @@ import { usePathname } from "next/navigation";
 import PathButton from "../buttons/pathButton/PathButton";
 //when nav happens on sidebar, active path will be gathered from pathName, therefore sate will be set to an empty string
 import { usePath } from "@/utils/activeContext";
+import { LangOption, MenuTexts } from "@/utils/commonTypes";
+import LangButton from "../buttons/langButton/LangButton";
 
-type LangOption = "hun" | "eng";
+import { engTexts, hunTexts } from "@/utils/content";
+import { findText } from "@/utils/helpers";
+
 type SidebarProps = {
   lang: LangOption;
   setLang: (lang: LangOption) => void;
@@ -40,51 +44,54 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
   return (
     <>
       <div className={styles.wrap}>
-        <Image
-          onClick={collapseHandler}
-          src={back_icon}
-          alt="back icon"
-          className={styles.backBtn}
-        />
-        <div className={styles.items} onClick={pathMatchRoute}>
-          <Link onClick={collapseHandler} href={"/"} as={"/"}>
-            <PathButton label="Home" pathname={pathname} />
-          </Link>
-          <Link onClick={collapseHandler} href={"/about"} as={"/about"}>
-            <PathButton label="About" pathname={pathname} />
-          </Link>
-          <div className={styles.mobile}>
+        <div className={styles.hero}>
+          <Image
+            onClick={collapseHandler}
+            src={back_icon}
+            alt="back icon"
+            className={styles.backBtn}
+            width={30}
+            height={30}
+          />
+          <div className={styles.items} onClick={pathMatchRoute}>
+            <Link onClick={collapseHandler} href={"/"} as={"/"}>
+              <PathButton label="home" text={findText(lang, "home")} />
+            </Link>
+            <Link onClick={collapseHandler} href={"/about"} as={"/about"}>
+              <PathButton label="about" text={findText(lang, "about")} />
+            </Link>
+            {/* <div className={styles.mobile}>
             <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>
-              <PathButton label="Contact" pathname={pathname} />
+            <PathButton text="Contact" />
+            </Link>
+          </div> */}
+            <Link onClick={collapseHandler} href={"/project"} as={"/project"}>
+              <PathButton label="project" text={findText(lang, "project")} />
+            </Link>
+            <Link onClick={collapseHandler} href={"/work"} as={"/work"}>
+              <PathButton label="work" text={findText(lang, "work")} />
+            </Link>
+            <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>
+              <PathButton label="contact" text={findText(lang, "contact")} />
             </Link>
           </div>
-          <Link onClick={collapseHandler} href={"/project"} as={"/project"}>
-            <PathButton label="Project" pathname={pathname} />
-          </Link>
-          <Link onClick={collapseHandler} href={"/work"} as={"/work"}>
-            <PathButton label="Work" pathname={pathname} />
-          </Link>
-          <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>
-            <PathButton label="Contact" pathname={pathname} />
-          </Link>
         </div>
-
-        <button
-          className={
-            lang === "hun" ? styles.buttonActive : styles.buttonInactive
-          }
-          onClick={() => handler("hun")}
-        >
-          hun
-        </button>
-        <button
-          className={
-            lang === "eng" ? styles.buttonActive : styles.buttonInactive
-          }
-          onClick={() => handler("eng")}
-        >
-          eng
-        </button>
+        <div className={styles.lang}>
+          <div className={styles.langButton}>
+            <LangButton
+              active={lang === "hun" ? true : false}
+              onClick={() => handler("hun")}
+              text="Hun"
+            />
+          </div>
+          <div className={styles.langButton}>
+            <LangButton
+              active={lang === "eng" ? true : false}
+              onClick={() => handler("eng")}
+              text="Eng"
+            />
+          </div>
+        </div>
       </div>
     </>
   );

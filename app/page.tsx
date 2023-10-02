@@ -70,11 +70,11 @@ export default async function Home() {
             <ScrollWrap text={"about"}>
               <About />
             </ScrollWrap>
-            <ScrollWrap text={"project"}>
-              <Project />
-            </ScrollWrap>
             <ScrollWrap text={"work"}>
               <Work />
+            </ScrollWrap>
+            <ScrollWrap text={"project"}>
+              <Project />
             </ScrollWrap>
             <ScrollWrap text={"contact"}>
               <Contact />

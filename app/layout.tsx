@@ -10,6 +10,7 @@ import { useState, useEffect, Suspense } from "react";
 import { createCookie, getCookie } from "@/utils/cookieActions";
 import SidebarButton from "@/components/buttons/sidebarButton/SidebarButton";
 import Loading from "./loading";
+import { LangOption } from "@/utils/commonTypes";
 
 //context
 import ActivePathProvider from "@/utils/activeContext";
@@ -20,7 +21,6 @@ export const metadata: Metadata = {
   title: "Tibor Vigh's Portfolio",
   description: "Tibor's developer portfolio website",
 };
-type LangOption = "hun" | "eng";
 
 export default function RootLayout({
   children,

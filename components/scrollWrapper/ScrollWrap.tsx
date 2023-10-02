@@ -19,6 +19,7 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
     setProjectPath,
     setWorkPath,
     setContactPath,
+    pathMatchRoute,
   } = usePath();
   const [isIntersecting, setIsIntersecting] = useState(false);
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -63,7 +64,7 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
         // Options for the IntersectionObserver
         root: null, // Use the viewport as the root
         // rootMargin: "0px", // No margin
-        threshold: 0.2, // Trigger when 50% of the observed element is visible
+        threshold: 0.1, // Trigger when 50% of the observed element is visible
       }
     );
 
@@ -73,6 +74,7 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
 
     // Clean up the observer when the component unmounts
     return () => {
+      pathMatchRoute();
       observer.disconnect();
     };
   }, []);

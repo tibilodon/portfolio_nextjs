@@ -4,8 +4,7 @@ import Image from "next/image";
 import styles from "./sidebarButton.module.css";
 import menu_icon from "@/public/icons/menu.svg";
 import Sidebar from "../../sidebar/Sidebar";
-
-type LangOption = "hun" | "eng";
+import { LangOption } from "@/utils/commonTypes";
 
 type SidebarButtonProps = {
   sidebar: boolean;

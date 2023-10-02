@@ -1,6 +1,7 @@
 :root {
   --background: #ffffff;
   --black: #333;
+  --inactive: #929292;
   --mobile: 768px;
 }
 * {

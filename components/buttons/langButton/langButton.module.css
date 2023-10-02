@@ -1,0 +1,24 @@
+.wrap {
+  /* border: 2px solid black; */
+  display: flex;
+  height: 100%;
+}
+.wrap span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.button {
+  background-color: var(--inactive);
+  color: var(--background);
+}
+.active {
+  background-color: var(--black);
+  color: var(--background);
+}
+@media (hover: hover) {
+  .button:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  }
+}

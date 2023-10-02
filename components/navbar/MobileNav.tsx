@@ -8,8 +8,7 @@ import Sidebar from "../sidebar/Sidebar";
 import home_icon from "@/public/icons/home.svg";
 import message_icon from "@/public/icons/message.svg";
 import { usePath } from "@/utils/activeContext";
-type LangOption = "hun" | "eng";
-
+import { LangOption } from "@/utils/commonTypes";
 type MobileNavProps = {
   sidebar: boolean;
   setSidebar: (sidebar: boolean) => void;

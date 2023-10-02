@@ -1,25 +1,28 @@
 "use client";
 import styles from "./pathButton.module.css";
+import { usePathname } from "next/navigation";
 
 import { usePath } from "@/utils/activeContext";
 type PathButtonProps = {
-  pathname: string;
   label: string;
+  text: string;
 };
 
 const PathButton: React.FunctionComponent<PathButtonProps> = ({
-  pathname,
   label,
+  text,
 }) => {
+  const pathName = usePathname();
+  console.log(pathName);
   const checkIsActive = (): string => {
     let style: string;
 
-    const resultString = pathname.replace("/", "");
+    const resultString = pathName.replace("/", "");
 
-    if (resultString === label.toLocaleLowerCase()) {
+    if (resultString === label) {
       return (style = "active");
     }
-    if (pathname === "/" && label === "Home") {
+    if (pathName === "/" && label === "home") {
       return (style = "active");
     } else {
       return (style = "inactive");
@@ -30,19 +33,19 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
   const markActive = (): string => {
     let style: string;
     switch (label) {
-      case "Home":
+      case "home":
         style = path === "/" ? "active" : "inactive";
         break;
-      case "About":
+      case "about":
         style = path === "/about" ? "active" : "inactive";
         break;
-      case "Project":
+      case "project":
         style = path === "/project" ? "active" : "inactive";
         break;
-      case "Work":
+      case "work":
         style = path === "/work" ? "active" : "inactive";
         break;
-      case "Contact":
+      case "contact":
         style = path === "/contact" ? "active" : "inactive";
         break;
 
@@ -52,12 +55,12 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
     }
     return style;
   };
-  console.log("PATH VALUE:", path);
+  // console.log("PATH VALUE:", path);
   return (
     <>
       <div className={styles.wrap}>
         <h1 className={styles[path ? markActive() : checkIsActive()]}>
-          {label}
+          {text}
         </h1>
       </div>
     </>
