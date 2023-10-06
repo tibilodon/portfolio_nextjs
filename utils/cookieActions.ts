@@ -1,4 +1,5 @@
 "use server";
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { cookies } from "next/headers";
 
 const createCookie = async (name: string, value: string): Promise<void> => {
@@ -6,7 +7,7 @@ const createCookie = async (name: string, value: string): Promise<void> => {
 };
 
 //add returned type
-const getCookie = async (name: string): Promise<any> => {
+const getCookie = async (name: string): Promise<RequestCookie | undefined> => {
   const cookieStore = cookies();
   const language = cookieStore.get(name);
   return language;

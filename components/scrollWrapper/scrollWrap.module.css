@@ -20,10 +20,12 @@
   /* background-color: lightblue; */
   /* margin: 20px; */
   opacity: 0.5;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .show {
+  /* width: 100%;
+  min-height: calc(100vh - 2.5em); */
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);

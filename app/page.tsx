@@ -44,46 +44,44 @@ async function getDetails(lang: Language): Promise<Details | null> {
 export default async function Home() {
   const lang = await getCookie("lang");
   const result = await getDetails(
-    lang.value === "eng" ? Language.ENG : Language.HUN
+    lang?.value === "eng" ? Language.ENG : Language.HUN
   );
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        {result !== null ? (
-          <>
-            <ScrollWrap text={"home"}>
-              <div className={styles.wrap}>
-                <div className={styles.text}>
-                  <h1>{result.heading}</h1>
-                  <h1>{result.profession}</h1>
-                </div>
-                <Image
-                  className={styles.image}
-                  //  height={604} width={395}
-                  src={portrait}
-                  alt="portrait picture"
-                  priority
-                />
+      {result !== null ? (
+        <>
+          <ScrollWrap text={"home"}>
+            <div className={styles.wrap}>
+              <div className={styles.text}>
+                <h1>{result.heading}</h1>
+                <h1>{result.profession}</h1>
               </div>
-            </ScrollWrap>
-            <ScrollWrap text={"about"}>
-              <About />
-            </ScrollWrap>
-            <ScrollWrap text={"work"}>
-              <Work />
-            </ScrollWrap>
-            <ScrollWrap text={"project"}>
-              <Project />
-            </ScrollWrap>
-            <ScrollWrap text={"contact"}>
-              <Contact />
-            </ScrollWrap>
-          </>
-        ) : (
-          <Loading />
-        )}
-      </Suspense>
+              <Image
+                className={styles.image}
+                //  height={604} width={395}
+                src={portrait}
+                alt="portrait picture"
+                priority
+              />
+            </div>
+          </ScrollWrap>
+          <ScrollWrap text={"about"}>
+            <About />
+          </ScrollWrap>
+          <ScrollWrap text={"work"}>
+            <Work />
+          </ScrollWrap>
+          <ScrollWrap text={"project"}>
+            <Project />
+          </ScrollWrap>
+          <ScrollWrap text={"contact"}>
+            <Contact />
+          </ScrollWrap>
+        </>
+      ) : (
+        <Loading />
+      )}
     </>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
+import { getCookie } from "./cookieActions";
 
 const ActiveContext = createContext({
   path: "/",
@@ -9,6 +10,7 @@ const ActiveContext = createContext({
   setContactPath: () => {},
   setWorkPath: () => {},
   pathMatchRoute: () => {},
+  getCurrentLang: () => {},
 });
 
 type ProviderProps = {
@@ -19,8 +21,29 @@ export const usePath = () => {
   return useContext(ActiveContext);
 };
 
+// const getCurrentLang = async () => {
+//   const res = await getCookie("lang");
+//   if (res?.value) {
+//     return res?.value;
+//   } else {
+//     return "eng";
+//   }
+// };
+
 export default function ActivePathProvider({ children }: ProviderProps) {
   const [path, setPath] = useState<string>("");
+  // const [currentLang, setCurrentLang] = useState<Promise<string>>(
+  //   getCurrentLang()
+  // );
+
+  const getCurrentLang = async () => {
+    const res = await getCookie("lang");
+    if (res?.value) {
+      return res?.value;
+    } else {
+      return "eng";
+    }
+  };
 
   const pathMatchRoute = () => {
     setPath("");
@@ -55,6 +78,7 @@ export default function ActivePathProvider({ children }: ProviderProps) {
         setWorkPath,
         setContactPath,
         pathMatchRoute,
+        getCurrentLang,
       }}
     >
       {children}

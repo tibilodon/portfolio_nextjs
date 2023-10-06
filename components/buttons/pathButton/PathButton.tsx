@@ -13,7 +13,6 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
   text,
 }) => {
   const pathName = usePathname();
-  console.log(pathName);
   const checkIsActive = (): string => {
     let style: string;
 
@@ -55,7 +54,6 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
     }
     return style;
   };
-  // console.log("PATH VALUE:", path);
   return (
     <>
       <div className={styles.wrap}>

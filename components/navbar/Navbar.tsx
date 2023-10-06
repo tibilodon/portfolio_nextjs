@@ -9,7 +9,8 @@ import PathButton from "../buttons/pathButton/PathButton";
 import { usePath } from "@/utils/activeContext";
 import { LangOption, MenuTexts } from "@/utils/commonTypes";
 import { engTexts, hunTexts } from "@/utils/content";
-import { findText } from "@/utils/helpers";
+import { findTextMenus } from "@/utils/helpers";
+import Loading from "@/app/loading";
 
 type NavbarProps = {
   sidebar: boolean;
@@ -34,6 +35,9 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
   //   backgroundColor: "red",
   //   padding: "1em",
   // };
+  if (!lang) {
+    return <Loading />;
+  }
 
   return (
     <>
@@ -49,24 +53,24 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
         <div className={styles.items} onClick={pathMatchRoute}>
           <Link href="/" as="/">
             {/* <button>Home</button> */}
-            <PathButton label="home" text={findText(lang, "home")} />
+            <PathButton label="home" text={findTextMenus(lang, "home")} />
           </Link>
 
           <Link href="/about" as="/about">
             {/* <span>About</span> */}
-            <PathButton label="about" text={findText(lang, "about")} />
+            <PathButton label="about" text={findTextMenus(lang, "about")} />
           </Link>
           <Link href="/work" as="/work">
             {/* <span>Work</span> */}
-            <PathButton label="work" text={findText(lang, "work")} />
+            <PathButton label="work" text={findTextMenus(lang, "work")} />
           </Link>
           <Link href="/project" as="/project">
             {/* <span>Project</span> */}
-            <PathButton label="project" text={findText(lang, "project")} />
+            <PathButton label="project" text={findTextMenus(lang, "project")} />
           </Link>
           <Link href="/contact" as="/contact">
             {/* <span>Contact</span> */}
-            <PathButton label="contact" text={findText(lang, "contact")} />
+            <PathButton label="contact" text={findTextMenus(lang, "contact")} />
           </Link>
           {/* <Link href="/test" as="/test">
             <button style={killme}>test</button>

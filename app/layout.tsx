@@ -11,6 +11,7 @@ import { createCookie, getCookie } from "@/utils/cookieActions";
 import SidebarButton from "@/components/buttons/sidebarButton/SidebarButton";
 import Loading from "./loading";
 import { LangOption } from "@/utils/commonTypes";
+import Modal from "@/components/modal/Modal";
 
 //context
 import ActivePathProvider from "@/utils/activeContext";
@@ -27,12 +28,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [lang, setLang] = useState<LangOption>("eng");
+  const [lang, setLang] = useState<LangOption>(null);
 
   //set "lang" @initial render
   useEffect(() => {
     const awaitCookie = async () => {
       const language = await getCookie("lang");
+      const tnc = await getCookie("tnc");
       if (language?.value) {
         setLang(language.value as LangOption);
       } else {
@@ -44,7 +46,9 @@ export default function RootLayout({
 
   //reset cookie whenever "lang" changes
   useEffect(() => {
-    createCookie("lang", lang);
+    if (lang) {
+      createCookie("lang", lang);
+    }
   }, [lang]);
 
   const [sidebar, setSidebar] = useState<boolean>(false);
@@ -56,24 +60,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={openSans.className}>
-        <ActivePathProvider>
-          <div className={"regularNav"}>
-            <Navbar
-              sidebar={sidebar}
-              setSidebar={setSidebar}
-              lang={lang}
-              setLang={setLang}
-            />
-          </div>
-          <div className={"mobileNav"}>
-            {/*TODO:  mobile navbar */}
-            <MobileNav
-              sidebar={sidebar}
-              setSidebar={setSidebar}
-              lang={lang}
-              setLang={setLang}
-            />
-            {/* <div onClick={sidebarHandler}>
+        <Suspense fallback={<Loading />}>
+          <ActivePathProvider>
+            <div className={"regularNav"}>
+              <Navbar
+                sidebar={sidebar}
+                setSidebar={setSidebar}
+                lang={lang}
+                setLang={setLang}
+              />
+            </div>
+            <div className={"mobileNav"}>
+              {/*TODO:  mobile navbar */}
+              <MobileNav
+                sidebar={sidebar}
+                setSidebar={setSidebar}
+                lang={lang}
+                setLang={setLang}
+              />
+              {/* <div onClick={sidebarHandler}>
             <MessageButton />
             </div>
             <SidebarButton
@@ -82,19 +87,21 @@ export default function RootLayout({
             sidebar={sidebar}
             setSidebar={setSidebar}
           /> */}
-          </div>
+            </div>
 
-          <Suspense fallback={<Loading />}>
             <div
               onClick={sidebarHandler}
               onWheel={sidebarHandler}
               onScroll={sidebarHandler}
               className="content"
             >
+              {/* <Suspense fallback={<Loading />}> */}
+              <Modal />
+              {/* </Suspense> */}
               {children}
             </div>
-          </Suspense>
-        </ActivePathProvider>
+          </ActivePathProvider>
+        </Suspense>
       </body>
     </html>
   );

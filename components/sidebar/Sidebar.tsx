@@ -4,15 +4,13 @@ import Link from "next/link";
 import styles from "./sidebar.module.css";
 import back_icon from "@/public/icons/back.svg";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import PathButton from "../buttons/pathButton/PathButton";
 //when nav happens on sidebar, active path will be gathered from pathName, therefore sate will be set to an empty string
 import { usePath } from "@/utils/activeContext";
-import { LangOption, MenuTexts } from "@/utils/commonTypes";
+import { LangOption } from "@/utils/commonTypes";
 import LangButton from "../buttons/langButton/LangButton";
 
-import { engTexts, hunTexts } from "@/utils/content";
-import { findText } from "@/utils/helpers";
+import { findTextMenus } from "@/utils/helpers";
 
 type SidebarProps = {
   lang: LangOption;
@@ -27,9 +25,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
   sidebar,
   setSidebar,
 }) => {
-  const pathname = usePathname();
   const { pathMatchRoute } = usePath();
-  console.log("PATHNAME", pathname);
   const handler = useCallback(
     (val: LangOption) => {
       setLang(val);
@@ -55,10 +51,10 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
           />
           <div className={styles.items} onClick={pathMatchRoute}>
             <Link onClick={collapseHandler} href={"/"} as={"/"}>
-              <PathButton label="home" text={findText(lang, "home")} />
+              <PathButton label="home" text={findTextMenus(lang, "home")} />
             </Link>
             <Link onClick={collapseHandler} href={"/about"} as={"/about"}>
-              <PathButton label="about" text={findText(lang, "about")} />
+              <PathButton label="about" text={findTextMenus(lang, "about")} />
             </Link>
             {/* <div className={styles.mobile}>
             <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>
@@ -66,13 +62,19 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
             </Link>
           </div> */}
             <Link onClick={collapseHandler} href={"/project"} as={"/project"}>
-              <PathButton label="project" text={findText(lang, "project")} />
+              <PathButton
+                label="project"
+                text={findTextMenus(lang, "project")}
+              />
             </Link>
             <Link onClick={collapseHandler} href={"/work"} as={"/work"}>
-              <PathButton label="work" text={findText(lang, "work")} />
+              <PathButton label="work" text={findTextMenus(lang, "work")} />
             </Link>
             <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>
-              <PathButton label="contact" text={findText(lang, "contact")} />
+              <PathButton
+                label="contact"
+                text={findTextMenus(lang, "contact")}
+              />
             </Link>
           </div>
         </div>

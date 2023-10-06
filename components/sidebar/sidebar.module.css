@@ -51,6 +51,9 @@
   background-color: red;
 }
 @media (min-width: 768px) {
+  .wrap {
+    width: 40%;
+  }
   /*icon replaces it @ MobileNavbar*/
   /* .mobile {
     display: none;

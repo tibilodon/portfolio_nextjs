@@ -23,8 +23,8 @@
 }
 
 .image {
-  max-width: 100%;
-  height: fit-content;
+  max-width: fit-content;
+  max-height: 90vh;
 }
 @media (min-width: 768px) {
   .wrap {
@@ -35,10 +35,11 @@
   }
   .image {
     /* max-height: calc(100vh - 40vh); */
-    width: 400px;
-    max-height: 600px;
+    /* width: 400px; */
+    max-height: calc(100vh - 2.5em);
   }
   .text {
+    font-size: x-large;
     /* border: 2px solid red; */
   }
 }
