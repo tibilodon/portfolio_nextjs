@@ -2,20 +2,9 @@ import { Metadata } from "next";
 import styles from "./page.module.css";
 import { Suspense } from "react";
 import Loading from "../loading";
-import {
-  engAboutShortTexts,
-  hunAboutShortTexts,
-  engAboutLongTexts,
-  hunAboutLongTexts,
-} from "@/utils/content";
 import Content from "@/components/content/about/AboutContent";
 import { findTextAbout } from "@/utils/helpers";
-import {
-  LangOption,
-  Technologies,
-  About,
-  AboutTextsLong,
-} from "@/utils/commonTypes";
+import { About } from "@/utils/commonTypes";
 
 export const metadata: Metadata = {
   title: "About",
@@ -27,7 +16,6 @@ export default async function About() {
   const short = texts[0];
 
   const long = texts[1];
-
   return (
     <>
       <Suspense fallback={<Loading />}>
@@ -41,12 +29,14 @@ export default async function About() {
                 </div>
               );
             })}
-          {long.map(({ technologies, technologiesDesc }, index) => (
+          <Content data={long} />
+          {/* {long.map(({ technologies, technologiesDesc }, index) => (
             <div className={styles.tech} key={index}>
               {technologies.map((tech, techIndex) => (
                 // <div className={styles.content} key={techIndex}>
 
                 <Content
+                  data={long}
                   key={techIndex}
                   label={tech}
                   content={
@@ -56,7 +46,7 @@ export default async function About() {
                 />
               ))}
             </div>
-          ))}
+          ))} */}
         </div>
       </Suspense>
     </>

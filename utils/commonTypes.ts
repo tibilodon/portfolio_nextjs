@@ -14,17 +14,6 @@ type AboutTextsShort = {
   technologies: string[];
 }[];
 
-// type Technologies = [
-//   {
-//     js: string;
-//     ts: string;
-//     nodejs: string;
-//     react: string;
-//     nextjs: string;
-//     sass: string;
-//   }
-// ];
-
 type Technologies = {
   javascript: string;
   typescript: string;

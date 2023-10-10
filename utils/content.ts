@@ -34,7 +34,7 @@ const engAboutShortTexts: AboutTextsShort = [
   {
     title: "About Tib",
     paragraph:
-      "My Name is Tibor Vigh, a hungarian self-taught and aspiring (web) developer.  I am comfortable using the technologies listed below:",
+      "My Name is Tibor Vigh, a hungarian self-taught and aspiring (web) developer.  I am comfortable using the technologies listed below. (Click to see more)",
     technologies: techStack,
   },
 ];
@@ -43,7 +43,7 @@ const hunAboutShortTexts: AboutTextsShort = [
   {
     title: "Tibiről",
     paragraph:
-      "Az én nevem Vigh Tibor és egy feltörekvő, autodidakta (web) fejlesztő. Az alábbi technológiákat magabiztosan használom:",
+      "Az én nevem Vigh Tibor és egy feltörekvő, autodidakta (web) fejlesztő. Az alábbi technológiákat magabiztosan használom. (Kattints, hogy bővebben lásd)",
     technologies: techStack,
   },
 ];
@@ -85,7 +85,7 @@ const hunAboutLongTexts: AboutTextsLong = [
         "A tiszta frontend alapú applikációk során hamar falakba ütköztem az adatbázis hiánya miatt. Elsődlegesen Firebase-t használtam, amivel könnyú elindítani dolgokat, de nem olyan gyors sem kényelmes mint api hívásokat intézni a backend felé.",
       sass: "A produktivitás mindig elsődleges a munkám során. A CSS sokkal komlikáltabb mint amilyennek tűnik, miért ne tenném könnyebbé egy jól bevált keretrendszerrel? A kérdés feltétele után elhatároztam, hogy SASS-t fogok használni, hogy megkönnyítsem az életem amikor a CSS az ellenkezőjére törekszik.",
       nextjs:
-        "NodeJS + Express és React alkalmazások fejlesztése közben minden simán ment a fejlesztői környezetemben, de élesben minden más. A keretrendszer hasznossága és könnyedsége miatt a NextJS-re esik a választásom minden alkalommal, hogy időt takarítsak meg. Nem beszélve arról, hogy a React csapat őket (is) említi mint ajánlott keretrendszert.",
+        "NodeJS + Express és React alkalmazások a fejlesztői környezetben probléma nélkül állhatnak készen a következő fázisra, viszont élesítéskor már több gond is felbukkanhat (például CORS error-ok). A keretrendszer hasznossága és könnyedsége miatt a NextJS-re esik a választásom minden alkalommal, hogy időt takarítsak meg. Nem beszélve arról, hogy a React csapat őket (is) említi mint ajánlott keretrendszert.",
     },
   },
 ];

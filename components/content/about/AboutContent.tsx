@@ -1,24 +1,84 @@
 "use client";
 import styles from "./aboutContent.module.css";
 import { useState } from "react";
-import { About } from "@/utils/commonTypes";
+import MoreContent from "./MoreContent";
+import { AboutTextsLong, Technologies } from "@/utils/commonTypes";
+import TechButton from "@/components/buttons/techButton/TechButton";
 
 type ContentProps = {
-  label: string;
-  content: string;
+  // label: string;
+  // content: string;
+  data: AboutTextsLong;
 };
 
-const Content: React.FunctionComponent<ContentProps> = ({ content, label }) => {
-  const [show, setShow] = useState(false);
-  const handler = (): void => {
-    setShow(!show);
+const Content: React.FunctionComponent<ContentProps> = ({
+  // content,
+  // label,
+  data,
+}) => {
+  const [show, setShow] = useState<boolean>(false);
+  const [val, setVal] = useState<string>("");
+  const [current, setCurrent] = useState<string>("");
+  const handler = (data: string, tech: string): void => {
+    const currentTech = tech.toLowerCase();
+    setShow(true);
+    setVal(data);
+    setCurrent(currentTech);
+
+    if (currentTech === current) {
+      if (!show) {
+        setShow(true);
+      } else {
+        setShow(false);
+        setCurrent("");
+      }
+    }
   };
+
+  const styler = (data: string): string => {
+    if (!show) {
+      return "";
+    }
+    if (data.toLocaleLowerCase() === current) {
+      return `${styles.notOpaque}`;
+    } else {
+      return `${styles.opaque}`;
+    }
+  };
+
   return (
     <>
       <div className={styles.wrap}>
-        <div className={!show ? styles.regular : styles.show}>
-          <span onClick={handler}>{label}</span>
-          {show ? <div className={styles.content}>{content}</div> : null}
+        <div className={!show ? styles.contentWrap : styles.contentWrapShow}>
+          {data.map(({ technologies, technologiesDesc }, index: number) => (
+            <div className={!show ? styles.tech : styles.techShow} key={index}>
+              {technologies.map((tech: string, techIndex: number) => (
+                <div key={techIndex} className={styler(tech)}>
+                  <span
+                    className={`${styles.btn} ${styles[tech.toLowerCase()]}`}
+                    onClick={() =>
+                      handler(
+                        (technologiesDesc as any)[tech.toLowerCase()],
+                        tech
+                      )
+                    }
+                  >
+                    {tech}
+                  </span>
+                  {/* <TechButton
+                    label={tech.toLowerCase()}
+                    current={current}
+                    active={show}
+                  /> */}
+                </div>
+              ))}
+            </div>
+          ))}
+          {show ? (
+            <div className={styles.tech}>
+              <div className={!show ? styles.regular : styles.show}>{val}</div>
+            </div>
+          ) : null}
         </div>
       </div>
     </>

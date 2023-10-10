@@ -32,9 +32,6 @@ export const usePath = () => {
 
 export default function ActivePathProvider({ children }: ProviderProps) {
   const [path, setPath] = useState<string>("");
-  // const [currentLang, setCurrentLang] = useState<Promise<string>>(
-  //   getCurrentLang()
-  // );
 
   const getCurrentLang = async () => {
     const res = await getCookie("lang");

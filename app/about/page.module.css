@@ -1,22 +1,25 @@
 .wrap {
   /* border: 4px solid yellowgreen; */
-  min-height: calc(100vh - 2.8em);
+  min-height: calc(100vh - 3em);
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .hero {
+  text-align: center;
   /* border: 4px solid black; */
 }
 
 .tech {
   /* border: 9px solid red; */
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /* gap: 2em; */
   width: 100%;
-  flex-grow: 2;
+  /* flex-grow: 2; */
 }
 .content {
   /* border: 6px solid rgb(128, 0, 85); */
