@@ -13,14 +13,14 @@
   /* position: relative; */
   flex-direction: column;
   width: 100%;
+  transition: width 2s;
 }
 
 .techShow {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
-  width: fit-content;
+  width: 30%;
 }
 .contentWrap {
   padding: 0.2em;
@@ -40,7 +40,8 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  /* border: 4px solid goldenrod; */
+  width: 0%;
+  transition: width 2s ease-in-out;
 }
 .show {
   border: 4px solid var(--inactive);
@@ -51,6 +52,7 @@
   height: fit-content;
   text-align: center;
   height: 100%;
+  width: 100%;
 }
 .notOpaque {
   border-left: 4px solid var(--inactive);

@@ -51,7 +51,12 @@ const Content: React.FunctionComponent<ContentProps> = ({
       <div className={styles.wrap}>
         <div className={!show ? styles.contentWrap : styles.contentWrapShow}>
           {data.map(({ technologies, technologiesDesc }, index: number) => (
-            <div className={!show ? styles.tech : styles.techShow} key={index}>
+            <div
+              className={
+                !show ? styles.tech : `${styles.tech} ${styles.techShow}`
+              }
+              key={index}
+            >
               {technologies.map((tech: string, techIndex: number) => (
                 <div key={techIndex} className={styler(tech)}>
                   <span
@@ -76,7 +81,13 @@ const Content: React.FunctionComponent<ContentProps> = ({
           ))}
           {show ? (
             <div className={styles.tech}>
-              <div className={!show ? styles.regular : styles.show}>{val}</div>
+              <div
+                className={
+                  !show ? styles.regular : `${styles.regular} ${styles.show}`
+                }
+              >
+                {val}
+              </div>
             </div>
           ) : null}
         </div>
