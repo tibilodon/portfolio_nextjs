@@ -32,6 +32,26 @@ type AboutTextsLong = {
 
 type About = [AboutTextsShort, AboutTextsLong];
 
+type Work = [{}];
+
+type WorkExperience = {
+  [key: string]: {
+    company: string;
+    position: string;
+    desc: string;
+    tasks: string;
+    projects: {
+      [key: string]: {
+        title: string;
+        url: string;
+        desc: string;
+      }[];
+    }[];
+    duration: string;
+    reasonOfLeaving: string;
+  };
+}[];
+
 export type {
   LangOption,
   MenuTexts,
@@ -40,4 +60,5 @@ export type {
   Technologies,
   AboutTextsLong,
   About,
+  WorkExperience,
 };

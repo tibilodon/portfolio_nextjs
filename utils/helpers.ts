@@ -5,8 +5,15 @@ import {
   engAboutShortTexts,
   engAboutLongTexts,
   hunAboutLongTexts,
+  engWork,
+  hunWork,
 } from "@/utils/content";
-import { LangOption, MenuTexts, About } from "@/utils/commonTypes";
+import {
+  LangOption,
+  MenuTexts,
+  About,
+  WorkExperience,
+} from "@/utils/commonTypes";
 import { getCookie } from "./cookieActions";
 
 const getCurrentLang = async () => {
@@ -39,4 +46,13 @@ const findTextAbout = async (): Promise<About> => {
     return [hunAboutShortTexts, hunAboutLongTexts];
   }
 };
-export { findTextMenus, findTextAbout };
+
+const findTextWork = async (): Promise<WorkExperience> => {
+  const res = await getCurrentLang();
+  if (res === "eng") {
+    return engWork;
+  } else {
+    return hunWork;
+  }
+};
+export { findTextMenus, findTextAbout, findTextWork };
