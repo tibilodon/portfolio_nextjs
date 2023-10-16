@@ -9,6 +9,7 @@ import home_icon from "@/public/icons/home.svg";
 import message_icon from "@/public/icons/message.svg";
 import { usePath } from "@/utils/activeContext";
 import { LangOption } from "@/utils/commonTypes";
+import SlideWrapper from "../slideWrapper/SlideWrapper";
 type MobileNavProps = {
   sidebar: boolean;
   setSidebar: (sidebar: boolean) => void;
@@ -41,7 +42,15 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
               src={menu_icon}
               alt="menu icon"
             />
-          ) : null}
+          ) : // <div className={styles.test}>
+          //   <Sidebar
+          //     lang={lang}
+          //     setLang={setLang}
+          //     sidebar={sidebar}
+          //     setSidebar={setSidebar}
+          //   />
+          // </div>
+          null}
         </div>
         <div className={styles.items} onClick={pathMatchRoute}>
           <Link href="/contact" as="/contact">
@@ -53,18 +62,27 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
             />
           </Link>
         </div>
-        {/* <Link href="/about" as="/about">
-          <button>About</button>
-        </Link> */}
       </div>
-      {sidebar ? (
+      {/* {sidebar ? ( */}
+      <div className={sidebar ? `${styles.test} ${styles.testV}` : styles.test}>
         <Sidebar
           lang={lang}
           setLang={setLang}
           sidebar={sidebar}
           setSidebar={setSidebar}
         />
-      ) : null}
+      </div>
+
+      {/* ) : null} */}
+
+      {/* <SlideWrapper show={sidebar}>
+        <Sidebar
+          lang={lang}
+          setLang={setLang}
+          sidebar={sidebar}
+          setSidebar={setSidebar}
+        />
+      </SlideWrapper> */}
     </>
   );
 };

@@ -11,6 +11,7 @@ import { LangOption, MenuTexts } from "@/utils/commonTypes";
 import { engTexts, hunTexts } from "@/utils/content";
 import { findTextMenus } from "@/utils/helpers";
 import Loading from "@/app/loading";
+import SlideWrapper from "../slideWrapper/SlideWrapper";
 
 type NavbarProps = {
   sidebar: boolean;

@@ -1,7 +1,7 @@
 .wrap {
   /* width: 3em; */
-  /* border-bottom: 1px solid #333; */
 }
+
 .inactive {
   /* margin-left: 1em; */
   /* padding: 0.5em; */
@@ -12,6 +12,7 @@
   transition: ease-in;
   transition-duration: 0.3s;
 }
+
 .inactive:hover {
   /* border-bottom: 1px solid #333; */
   color: var(--black);

@@ -56,11 +56,9 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
   };
   return (
     <>
-      <div className={styles.wrap}>
-        <h1 className={styles[path ? markActive() : checkIsActive()]}>
-          {text}
-        </h1>
-      </div>
+      {/* <div className={styles.wrap}> */}
+      <h1 className={styles[path ? markActive() : checkIsActive()]}>{text}</h1>
+      {/* </div> */}
     </>
   );
 };

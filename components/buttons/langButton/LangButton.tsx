@@ -16,7 +16,13 @@ const LangButton: React.FunctionComponent<LangButtonProps> = ({
   return (
     <>
       <div onClick={onClick} className={styles.wrap}>
-        <span className={active ? styles.active : styles.button}>{text}</span>
+        <span
+          className={
+            active ? `${styles.button} ${styles.active}` : styles.button
+          }
+        >
+          {text}
+        </span>
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 "use client";
+import LangButton from "../buttons/langButton/LangButton";
 import styles from "./expandContent.module.css";
 import { useState, useEffect } from "react";
 
@@ -35,9 +36,10 @@ const ExpandContent: React.FunctionComponent<ExpandContentProps> = ({
   return (
     <>
       <div className={styles.wrap}>
-        <span className={styles.btn} onClick={handler}>
+        {/* <span className={styles.btn} onClick={handler}>
           {label}
-        </span>
+        </span> */}
+        <LangButton active={!expand} onClick={handler} text={label} />
         <div className={setStyle()}>
           <div className={styles.content}>{children}</div>
         </div>
