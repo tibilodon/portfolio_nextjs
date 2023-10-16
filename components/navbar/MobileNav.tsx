@@ -64,14 +64,14 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
         </div>
       </div>
       {/* {sidebar ? ( */}
-      <div className={sidebar ? `${styles.test} ${styles.testV}` : styles.test}>
+      <SlideWrapper show={sidebar}>
         <Sidebar
           lang={lang}
           setLang={setLang}
           sidebar={sidebar}
           setSidebar={setSidebar}
         />
-      </div>
+      </SlideWrapper>
 
       {/* ) : null} */}
 

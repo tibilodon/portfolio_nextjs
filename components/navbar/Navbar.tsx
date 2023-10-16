@@ -78,14 +78,16 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
           </Link> */}
         </div>
       </div>
-      {sidebar ? (
+      {/* {sidebar ? ( */}
+      <SlideWrapper show={sidebar}>
         <Sidebar
           lang={lang}
           setLang={setLang}
           sidebar={sidebar}
           setSidebar={setSidebar}
         />
-      ) : null}
+      </SlideWrapper>
+      {/* ) : null} */}
     </>
   );
 };
