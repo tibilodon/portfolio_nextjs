@@ -1,4 +1,19 @@
 .wrap {
-  border: 2px solid red;
-  min-height: calc(100vh - 3.5em);
+  /* border: 2px solid red; */
+  min-height: calc(100vh - 2.5em);
+  width: 100%;
+  padding: 0.5em;
+}
+
+.download {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  /* border: 2px solid black; */
+}
+
+@media (hover: hover) {
+  .download h1:hover {
+    margin: 0.7em;
+  }
 }

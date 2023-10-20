@@ -41,16 +41,9 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
               onClick={handler}
               src={menu_icon}
               alt="menu icon"
+              priority
             />
-          ) : // <div className={styles.test}>
-          //   <Sidebar
-          //     lang={lang}
-          //     setLang={setLang}
-          //     sidebar={sidebar}
-          //     setSidebar={setSidebar}
-          //   />
-          // </div>
-          null}
+          ) : null}
         </div>
         <div className={styles.items} onClick={pathMatchRoute}>
           <Link href="/contact" as="/contact">
@@ -63,7 +56,7 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
           </Link>
         </div>
       </div>
-      {/* {sidebar ? ( */}
+
       <SlideWrapper show={sidebar}>
         <Sidebar
           lang={lang}
@@ -72,17 +65,6 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
           setSidebar={setSidebar}
         />
       </SlideWrapper>
-
-      {/* ) : null} */}
-
-      {/* <SlideWrapper show={sidebar}>
-        <Sidebar
-          lang={lang}
-          setLang={setLang}
-          sidebar={sidebar}
-          setSidebar={setSidebar}
-        />
-      </SlideWrapper> */}
     </>
   );
 };

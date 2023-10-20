@@ -1,15 +1,28 @@
 "use client";
 import LangButton from "../buttons/langButton/LangButton";
 import styles from "./expandContent.module.css";
+import { LangOption } from "@/utils/commonTypes";
 import { useState, useEffect } from "react";
+import Loading from "@/app/loading";
 
-type ExpandContentProps = { children: React.ReactNode };
+type ExpandContentProps = { children: React.ReactNode; lang: string };
 
 const ExpandContent: React.FunctionComponent<ExpandContentProps> = ({
   children,
+  lang,
 }) => {
+  useEffect(() => {
+    const setCurrentLabel = () => {
+      if (lang === "eng") {
+        setLabel("See More");
+      } else {
+        setLabel("Bővebben");
+      }
+    };
+    setCurrentLabel();
+  }, [, lang]);
   const [expand, setExpand] = useState<boolean>(false);
-  const [label, setLabel] = useState<string>("See More");
+  const [label, setLabel] = useState<string>("");
   const setStyle = (): string => {
     if (expand) {
       return `${styles.expand} ${styles.show}`;
@@ -24,14 +37,25 @@ const ExpandContent: React.FunctionComponent<ExpandContentProps> = ({
 
   useEffect(() => {
     const selectLabel = (): void => {
-      if (expand) {
+      if (expand && lang === "eng") {
         setLabel("See Less");
-      } else {
+      }
+      if (!expand && lang === "eng") {
         setLabel("See More");
+      }
+      if (expand && lang === "hun") {
+        setLabel("Kevesebb");
+      }
+      if (!expand && lang === "hun") {
+        setLabel("Bővebben");
       }
     };
     selectLabel();
   }, [expand]);
+
+  if (label === "") {
+    return <Loading />;
+  }
 
   return (
     <>

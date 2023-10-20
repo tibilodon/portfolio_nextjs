@@ -48,29 +48,24 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
       >
         <div>
           {!sidebar ? (
-            <Image onClick={handler} src={menu_icon} alt="menu icon" />
+            <Image onClick={handler} src={menu_icon} alt="menu icon" priority />
           ) : null}
         </div>
         <div className={styles.items} onClick={pathMatchRoute}>
           <Link href="/" as="/">
-            {/* <button>Home</button> */}
             <PathButton label="home" text={findTextMenus(lang, "home")} />
           </Link>
 
           <Link href="/about" as="/about">
-            {/* <span>About</span> */}
             <PathButton label="about" text={findTextMenus(lang, "about")} />
           </Link>
           <Link href="/work" as="/work">
-            {/* <span>Work</span> */}
             <PathButton label="work" text={findTextMenus(lang, "work")} />
           </Link>
           <Link href="/project" as="/project">
-            {/* <span>Project</span> */}
             <PathButton label="project" text={findTextMenus(lang, "project")} />
           </Link>
           <Link href="/contact" as="/contact">
-            {/* <span>Contact</span> */}
             <PathButton label="contact" text={findTextMenus(lang, "contact")} />
           </Link>
           {/* <Link href="/test" as="/test">
@@ -78,7 +73,6 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
           </Link> */}
         </div>
       </div>
-      {/* {sidebar ? ( */}
       <SlideWrapper show={sidebar}>
         <Sidebar
           lang={lang}
@@ -87,7 +81,6 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
           setSidebar={setSidebar}
         />
       </SlideWrapper>
-      {/* ) : null} */}
     </>
   );
 };

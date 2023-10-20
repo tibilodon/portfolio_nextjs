@@ -3,6 +3,7 @@ import {
   AboutTextsShort,
   AboutTextsLong,
   WorkExperience,
+  HomeTexts,
 } from "@/utils/commonTypes";
 
 //sidebar, navbar
@@ -19,6 +20,16 @@ const engTexts: MenuTexts = {
   project: "Project",
   work: "Work",
   contact: "Contact",
+};
+
+const engHomeTexts: HomeTexts = {
+  heading: "Hello! I am Tibor.",
+  profession: "Web Developer",
+};
+
+const hunHomeTexts: HomeTexts = {
+  heading: "Szia! Tibor vagyok.",
+  profession: "Webfejlesztő",
 };
 
 const techStack: string[] = [
@@ -304,4 +315,6 @@ export {
   hunAboutLongTexts,
   engWork,
   hunWork,
+  engHomeTexts,
+  hunHomeTexts,
 };

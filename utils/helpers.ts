@@ -55,4 +55,4 @@ const findTextWork = async (): Promise<WorkExperience> => {
     return hunWork;
   }
 };
-export { findTextMenus, findTextAbout, findTextWork };
+export { findTextMenus, findTextAbout, findTextWork, getCurrentLang };

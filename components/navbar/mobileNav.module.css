@@ -21,27 +21,3 @@
   display: flex;
   justify-content: space-around;
 }
-/* .test > * {
-  transition: opacity 500ms ease-in-out;
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
-.testV > * {
-  opacity: 1;
-  height: 100%;
-} */
-
-.test > * {
-  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-  transform: translateX(100%);
-}
-
-.testV > * {
-  opacity: 1;
-  height: 100%;
-  transform: translateX(0);
-}

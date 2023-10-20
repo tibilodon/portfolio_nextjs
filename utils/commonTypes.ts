@@ -8,6 +8,11 @@ type MenuTexts = {
   contact: string;
 };
 
+type HomeTexts = {
+  heading: string;
+  profession: string;
+};
+
 type AboutTextsShort = {
   title: string;
   paragraph: string;
@@ -32,8 +37,6 @@ type AboutTextsLong = {
 
 type About = [AboutTextsShort, AboutTextsLong];
 
-type Work = [{}];
-
 type WorkExperience = {
   [key: string]: {
     company: string;
@@ -52,13 +55,22 @@ type WorkExperience = {
   };
 }[];
 
+type Form = {
+  name: string;
+  email: string;
+  message: string;
+  language: LangOption;
+};
+
 export type {
   LangOption,
   MenuTexts,
+  HomeTexts,
   TnC,
   AboutTextsShort,
   Technologies,
   AboutTextsLong,
   About,
   WorkExperience,
+  Form,
 };

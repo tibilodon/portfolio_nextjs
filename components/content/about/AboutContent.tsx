@@ -1,9 +1,7 @@
 "use client";
 import styles from "./aboutContent.module.css";
 import { useState } from "react";
-import MoreContent from "./MoreContent";
 import { AboutTextsLong, Technologies } from "@/utils/commonTypes";
-import TechButton from "@/components/buttons/techButton/TechButton";
 
 type ContentProps = {
   // label: string;
@@ -70,11 +68,6 @@ const Content: React.FunctionComponent<ContentProps> = ({
                   >
                     {tech}
                   </span>
-                  {/* <TechButton
-                    label={tech.toLowerCase()}
-                    current={current}
-                    active={show}
-                  /> */}
                 </div>
               ))}
             </div>
