@@ -5,9 +5,7 @@ import WorkContentWrapper from "@/components/workContentWrapper/WorkContentWrapp
 export default function Test() {
   return (
     <>
-      <div className={styles.wrap}>
-        <ExpandingTextfield />
-      </div>
+      <div className={styles.wrap}>{/* <ExpandingTextfield /> */}</div>
     </>
   );
 }

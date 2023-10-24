@@ -4,6 +4,7 @@ import styles from "./inputForm.module.css";
 import { useState, useCallback, useEffect } from "react";
 import { Form, LangOption } from "@/utils/commonTypes";
 import RegularButton from "../buttons/regular/RegularButton";
+import ExpandingTextfield from "../expandingTextfield/ExpandingTextfield";
 
 type InputFormProps = { lang: LangOption };
 
@@ -95,23 +96,14 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({ lang }) => {
               onChange={formHandler}
             />
           </span>
-          <span className={styles.textareaWrap}>
-            <textarea
+          <span className={styles.textarea}>
+            <ExpandingTextfield
               id="message"
-              value={form.message}
-              placeholder="message"
-              onChange={formHandler}
               cols={30}
-              rows={5}
-            >
-              {/* <input
-                id="message"
-                value={form.message}
-                type={"text"}
-                placeholder={"message"}
-                onChange={formHandler}
-              /> */}
-            </textarea>
+              onChange={formHandler}
+              placeHolder="your message"
+              val={form.message}
+            />
           </span>
           <span className={styles.btn}>
             <RegularButton type="submit" label="Submit" />

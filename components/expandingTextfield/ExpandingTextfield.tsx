@@ -1,40 +1,58 @@
 "use client";
-import { useState, useEffect } from "react";
+import styles from "./expandingTextfield.module.css";
+import { useState, useEffect, useRef } from "react";
 
-type ExpandingTextfieldProps = {};
+type ExpandingTextfieldProps = {
+  id: string;
+  val: string;
+  placeHolder: string;
+  onChange: (
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  cols: number;
+};
 
-const ExpandingTextfield: React.FunctionComponent<
-  ExpandingTextfieldProps
-> = () => {
-  const [val, setVal] = useState("");
-  const [rowNumbs, setRowNumbs] = useState(1);
+const ExpandingTextfield: React.FunctionComponent<ExpandingTextfieldProps> = ({
+  id,
+  val,
+  placeHolder,
+  onChange,
+  cols,
+}) => {
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  // const [rowNumbs, setRowNumbs] = useState(1);
+
+  // useEffect(() => {
+  //   console.log(window.innerWidth);
+  //   let rows = Math.ceil(val.length / cols);
+  //   if (rows > 0) {
+  //     setRowNumbs(rows);
+  //   }
+  //   if (rows === 0) {
+  //     setRowNumbs(1);
+  //   }
+  // }, [val, cols]);
 
   useEffect(() => {
-    if (val.length % 30 === 0) {
-      let ek = val.length / 30;
-      console.log("the set val", ek);
-      if (ek >= 0) {
-        setRowNumbs(ek + 1);
-      }
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto"; // Reset the height
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`; // Set the height to fit the content
     }
   }, [val]);
 
-  const formHandler = (
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
-  ): void => {
-    const { id, value } = e.currentTarget;
-    setVal(value);
-  };
   return (
     <>
-      <textarea
-        id="message"
-        value={val}
-        placeholder="message"
-        onChange={formHandler}
-        cols={30}
-        rows={rowNumbs}
-      ></textarea>
+      <div className={styles.wrap}>
+        <textarea
+          ref={textareaRef}
+          id={id}
+          value={val}
+          placeholder={placeHolder}
+          onChange={onChange}
+          // cols={cols}
+          rows={1}
+        />
+      </div>
     </>
   );
 };
