@@ -1,0 +1,12 @@
+.wrap {
+  border: 2px solid red;
+  background-size: cover;
+  height: 30vh;
+  border: 2px solid black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

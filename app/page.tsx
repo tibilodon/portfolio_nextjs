@@ -10,7 +10,7 @@ import { getCookie } from "@/utils/cookieActions";
 //pages for smooth scrolling
 import About from "./about/page";
 import Contact from "./contact/page";
-import Project from "./project/page";
+import Projects from "./projects/page";
 import Work from "./work/page";
 
 import ScrollWrap from "@/components/scrollWrapper/ScrollWrap";
@@ -71,8 +71,8 @@ export default async function Home() {
           <ScrollWrap text={"work"}>
             <Work />
           </ScrollWrap>
-          <ScrollWrap text={"project"}>
-            <Project />
+          <ScrollWrap text={"projects"}>
+            <Projects />
           </ScrollWrap>
           <ScrollWrap text={"contact"}>
             <Contact />

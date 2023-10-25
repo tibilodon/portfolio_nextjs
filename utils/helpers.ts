@@ -7,12 +7,18 @@ import {
   hunAboutLongTexts,
   engWork,
   hunWork,
+  engContact,
+  hunContact,
+  engProject,
+  hunProject,
 } from "@/utils/content";
 import {
   LangOption,
   MenuTexts,
   About,
   WorkExperience,
+  Contact,
+  Projects,
 } from "@/utils/commonTypes";
 import { getCookie } from "./cookieActions";
 
@@ -22,6 +28,14 @@ const getCurrentLang = async () => {
     return res?.value;
   } else {
     return "eng";
+  }
+};
+
+const findTextContact = (lang: LangOption): Contact => {
+  if (lang === "eng") {
+    return engContact;
+  } else {
+    return hunContact;
   }
 };
 
@@ -55,4 +69,19 @@ const findTextWork = async (): Promise<WorkExperience> => {
     return hunWork;
   }
 };
-export { findTextMenus, findTextAbout, findTextWork, getCurrentLang };
+
+const findProjectsContact = (lang: LangOption): Projects => {
+  if (lang === "eng") {
+    return engProject;
+  } else {
+    return hunProject;
+  }
+};
+export {
+  findTextMenus,
+  findTextAbout,
+  findTextWork,
+  getCurrentLang,
+  findTextContact,
+  findProjectsContact,
+};

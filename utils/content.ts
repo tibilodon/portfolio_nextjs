@@ -4,20 +4,22 @@ import {
   AboutTextsLong,
   WorkExperience,
   HomeTexts,
+  Contact,
+  Projects,
 } from "@/utils/commonTypes";
 
 //sidebar, navbar
 const hunTexts: MenuTexts = {
   home: "Főoldal",
   about: "Rólam",
-  project: "Projekt",
+  projects: "Projektek",
   work: "Tapasztalat",
   contact: "Kapcsolat",
 };
 const engTexts: MenuTexts = {
   home: "Home",
   about: "About",
-  project: "Project",
+  projects: "Projects",
   work: "Work",
   contact: "Contact",
 };
@@ -69,7 +71,7 @@ const engAboutLongTexts: AboutTextsLong = [
       javascript:
         "The first programming language I started out with and still learning new things about every time I use it. My current tech-stack is based around JS, besides SASS",
       typescript:
-        "The superset of JS, which made me to dab on to more statically typed languages like C# (see more at Project page). In my opinion it is a great way to keep any application scalable in the long run.",
+        "The superset of JS, which made me to dab on to more statically typed languages like C# (see more at Projects page). In my opinion it is a great way to keep any application scalable in the long run.",
       react:
         "With its popularity and component approach it is my go to frontend framework for any web based project.",
       nodejs:
@@ -306,6 +308,85 @@ const hunWork: WorkExperience = [
   },
 ];
 
+const engContact: Contact = {
+  title: "Contact",
+  hero: `Feel free to get contact me any time. I will get back to you as soon
+  as I can!`,
+  name: "name",
+  textfield: "your message",
+  button: "Submit",
+};
+
+const hunContact: Contact = {
+  title: "Kapcsolat",
+  hero: `Bármikor felveheted velem a kapcsolatot. Igyekszem minél hamarabb válaszolni!`,
+  name: "név",
+  textfield: "a Te üzeneted",
+  button: "Küldés",
+};
+
+const engProject: Projects = {
+  title: "Projects",
+  buttonMore: "See More",
+  buttonLess: "See Less",
+  projects: [
+    {
+      hingyi: [
+        {
+          title: "Hingyi Méhészet",
+          desc: "Small scaled webshop for a family runned bee keeping company. Database and other products will be added but are dependent on the customer's demand. At the moment, orders are processed vie the FormSubmit.co API. The website is using NextJS, JavaScript and custom SASS.",
+          url: "https://hingyi-meheszet.vercel.app",
+        },
+      ],
+      busyant: [
+        {
+          title: "Busy Ant LLC",
+          desc: "Simple landing and contact page for a startup. Enquiries are processed with the FormSubmit.co API for simplicity. The website is using NextJS, JavaScript and custom CSS.",
+          url: "https://www.busyantllc.com/",
+        },
+      ],
+      portfolio: [
+        {
+          title: "This Portfolio site",
+          desc: "Interactive and concise CV. Simplicity and a kind of logic that satisfies my standards made up the base idea for this website. I also wanted to get back into TypeScript and CSS, that is why the old website went through a complete overhaul and instead of using React, JS, CSS and Firebase, the website is using NextJS, TypeScript and custom CSS.",
+          url: "https://www.busyantllc.com/",
+        },
+      ],
+    },
+  ],
+};
+
+const hunProject: Projects = {
+  title: "Projektek",
+  buttonMore: "Több",
+  buttonLess: "Kevesebb",
+  projects: [
+    {
+      hingyi: [
+        {
+          title: "Hingyi Méhészet",
+          desc: "Kis méretű webshop egy családi méhészetnek. Adatbázis és további termékek hozzáadása az ügyfél kérésére történnek majd. A megrendelések jelenleg a FormSubmit.co API által kezeltek. A weblap NextJS, JavaScript és egyedi SASS-el készült.",
+          url: "https://hingyi-meheszet.vercel.app",
+        },
+      ],
+      busyant: [
+        {
+          title: "Busy Ant LLC",
+          desc: "Egyszerű fő és kapcsolat oldalakból álló weblap egy induló vállalkozáshoz. Az üzeneteket a FormSubmit.co API által kezeltek, hogy megkönnyítsék az átláthatóságot. A weblap NextJS, JavaScript és egyedi CSS-el készült.",
+          url: "https://www.busyantllc.com/",
+        },
+      ],
+      portfolio: [
+        {
+          title: "Ez a portfolio",
+          desc: "Interaktív, összefoglaló önéletrajz. Az egyszerűség és az én elvárásaimnak megfelelő logikán volt a hangsúly. A TypeScript és a CSS újragyakorlása miatt teljes mértékben átírásra került a régi honlap, amely React, JS és Firebase alkotta keretrendszerben íródott. A weblap NextJS, TypeScript és egyedi CSS-el készült.",
+          url: "https://www.busyantllc.com/",
+        },
+      ],
+    },
+  ],
+};
+
 export {
   engTexts,
   hunTexts,
@@ -317,4 +398,8 @@ export {
   hunWork,
   engHomeTexts,
   hunHomeTexts,
+  engContact,
+  hunContact,
+  engProject,
+  hunProject,
 };

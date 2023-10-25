@@ -54,7 +54,7 @@ export default function ActivePathProvider({ children }: ProviderProps) {
     setPath("/about");
   };
   const setProjectPath = () => {
-    setPath("/project");
+    setPath("/projects");
   };
 
   const setWorkPath = () => {

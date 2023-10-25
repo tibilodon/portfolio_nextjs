@@ -62,8 +62,11 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
           <Link href="/work" as="/work">
             <PathButton label="work" text={findTextMenus(lang, "work")} />
           </Link>
-          <Link href="/project" as="/project">
-            <PathButton label="project" text={findTextMenus(lang, "project")} />
+          <Link href="/projects" as="/projects">
+            <PathButton
+              label="projects"
+              text={findTextMenus(lang, "projects")}
+            />
           </Link>
           <Link href="/contact" as="/contact">
             <PathButton label="contact" text={findTextMenus(lang, "contact")} />

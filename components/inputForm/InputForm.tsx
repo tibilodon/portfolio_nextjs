@@ -1,14 +1,24 @@
 "use client";
 import Loading from "@/app/loading";
 import styles from "./inputForm.module.css";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Form, LangOption } from "@/utils/commonTypes";
 import RegularButton from "../buttons/regular/RegularButton";
 import ExpandingTextfield from "../expandingTextfield/ExpandingTextfield";
 
-type InputFormProps = { lang: LangOption };
+type InputFormProps = {
+  lang: LangOption;
+  name: string;
+  textfield: string;
+  button: string;
+};
 
-const InputForm: React.FunctionComponent<InputFormProps> = ({ lang }) => {
+const InputForm: React.FunctionComponent<InputFormProps> = ({
+  lang,
+  name,
+  textfield,
+  button,
+}) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [form, setForm] = useState<Form>({
@@ -82,7 +92,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({ lang }) => {
               id="name"
               value={form.name}
               type={"text"}
-              placeholder={"name"}
+              placeholder={name}
               onChange={formHandler}
             />
           </span>
@@ -99,14 +109,13 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({ lang }) => {
           <span className={styles.textarea}>
             <ExpandingTextfield
               id="message"
-              cols={30}
               onChange={formHandler}
-              placeHolder="your message"
+              placeHolder={textfield}
               val={form.message}
             />
           </span>
           <span className={styles.btn}>
-            <RegularButton type="submit" label="Submit" />
+            <RegularButton type="submit" label={button} />
           </span>
         </form>
       </div>

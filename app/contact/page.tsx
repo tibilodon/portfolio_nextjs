@@ -2,8 +2,8 @@ import styles from "./page.module.css";
 import type { Metadata } from "next";
 import Loading from "../loading";
 import InputForm from "@/components/inputForm/InputForm";
-import { getCookie } from "@/utils/cookieActions";
-import { LangOption } from "@/utils/commonTypes";
+import { getCurrentLang, findTextContact } from "@/utils/helpers";
+import { LangOption, Contact } from "@/utils/commonTypes";
 
 //only works with server components
 export const metadata: Metadata = {
@@ -12,19 +12,29 @@ export const metadata: Metadata = {
 };
 
 export default async function Contact() {
-  const lang = await getCookie("lang");
+  const lang = await getCurrentLang();
+  const content: Contact = findTextContact(lang as LangOption);
+
+  if (!content) {
+    return <Loading />;
+  }
+
+  const { title, hero, name, textfield, button } = content;
+
   return (
     <>
       <div className={styles.wrap}>
         <div className={styles.hero}>
-          <h1>Contact</h1>
-          <p>
-            Feel free to get contact me any time. I will get back to you as soon
-            as I can!
-          </p>
+          <h1>{title}</h1>
+          <p>{hero}</p>
         </div>
         <div className={styles.inputs}>
-          <InputForm lang={(lang?.value as LangOption) ?? "eng"} />
+          <InputForm
+            name={name}
+            textfield={textfield}
+            button={button}
+            lang={(lang as LangOption) ?? "eng"}
+          />
         </div>
       </div>
     </>

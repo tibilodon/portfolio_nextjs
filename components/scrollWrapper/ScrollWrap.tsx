@@ -35,7 +35,7 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
           case "about":
             interSecting && setAboutPath();
             break;
-          case "project":
+          case "projects":
             interSecting && setProjectPath();
             break;
           case "work":

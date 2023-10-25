@@ -38,8 +38,8 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
       case "about":
         style = path === "/about" ? "active" : "inactive";
         break;
-      case "project":
-        style = path === "/project" ? "active" : "inactive";
+      case "projects":
+        style = path === "/projects" ? "active" : "inactive";
         break;
       case "work":
         style = path === "/work" ? "active" : "inactive";

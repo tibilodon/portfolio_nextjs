@@ -64,10 +64,10 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
             <Link onClick={collapseHandler} href={"/work"} as={"/work"}>
               <PathButton label="work" text={findTextMenus(lang, "work")} />
             </Link>
-            <Link onClick={collapseHandler} href={"/project"} as={"/project"}>
+            <Link onClick={collapseHandler} href={"/projects"} as={"/projects"}>
               <PathButton
-                label="project"
-                text={findTextMenus(lang, "project")}
+                label="projects"
+                text={findTextMenus(lang, "projects")}
               />
             </Link>
             <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>

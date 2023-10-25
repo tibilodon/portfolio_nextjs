@@ -30,23 +30,6 @@ export default async function About() {
               );
             })}
           <Content data={long} />
-          {/* {long.map(({ technologies, technologiesDesc }, index) => (
-            <div className={styles.tech} key={index}>
-              {technologies.map((tech, techIndex) => (
-                // <div className={styles.content} key={techIndex}>
-
-                <Content
-                  data={long}
-                  key={techIndex}
-                  label={tech}
-                  content={
-                    //the most annoying type error occurred hence the use of any
-                    (technologiesDesc as any)[tech.toLowerCase()]
-                  }
-                />
-              ))}
-            </div>
-          ))} */}
         </div>
       </Suspense>
     </>

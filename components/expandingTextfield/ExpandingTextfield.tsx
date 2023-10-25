@@ -1,6 +1,6 @@
 "use client";
 import styles from "./expandingTextfield.module.css";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 type ExpandingTextfieldProps = {
   id: string;
@@ -9,7 +9,6 @@ type ExpandingTextfieldProps = {
   onChange: (
     e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
-  cols: number;
 };
 
 const ExpandingTextfield: React.FunctionComponent<ExpandingTextfieldProps> = ({
@@ -17,21 +16,8 @@ const ExpandingTextfield: React.FunctionComponent<ExpandingTextfieldProps> = ({
   val,
   placeHolder,
   onChange,
-  cols,
 }) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  // const [rowNumbs, setRowNumbs] = useState(1);
-
-  // useEffect(() => {
-  //   console.log(window.innerWidth);
-  //   let rows = Math.ceil(val.length / cols);
-  //   if (rows > 0) {
-  //     setRowNumbs(rows);
-  //   }
-  //   if (rows === 0) {
-  //     setRowNumbs(1);
-  //   }
-  // }, [val, cols]);
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -49,7 +35,6 @@ const ExpandingTextfield: React.FunctionComponent<ExpandingTextfieldProps> = ({
           value={val}
           placeholder={placeHolder}
           onChange={onChange}
-          // cols={cols}
           rows={1}
         />
       </div>
