@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import MobileNav from "@/components/navbar/MobileNav";
@@ -18,10 +18,10 @@ import ActivePathProvider from "@/utils/activeContext";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Tibor Vigh's Portfolio",
-  description: "Tibor's developer portfolio website",
-};
+// export const metadata: Metadata = {
+//   title: "Tibor Vigh's Portfolio",
+//   description: "Tibor's developer portfolio website",
+// };
 
 export default function RootLayout({
   children,
