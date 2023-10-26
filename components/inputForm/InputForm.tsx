@@ -70,7 +70,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
           message: "",
           language: lang,
         });
-        setIsLoading(false);
+        // setIsLoading(false);
         router.push("/thankyou");
       } else {
         // Handle errors
