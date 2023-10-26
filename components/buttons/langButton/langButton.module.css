@@ -13,6 +13,8 @@
   background-color: var(--inactive);
   color: var(--background);
   transition: background-color 800ms;
+  text-align: center;
+  padding: 0.3em;
 }
 .active {
   background-color: var(--black);

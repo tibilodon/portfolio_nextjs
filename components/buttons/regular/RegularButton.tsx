@@ -11,7 +11,7 @@ const RegularButton: React.FunctionComponent<RegularButtonProps> = ({
 }) => {
   return (
     <>
-      <button type={type} className={styles.btn}>
+      <button type={type || "button"} className={styles.btn}>
         {label}
       </button>
     </>

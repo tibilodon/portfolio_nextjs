@@ -74,6 +74,7 @@ type Projects = {
   title: string;
   buttonMore: string;
   buttonLess: string;
+  siteLabel: string;
   projects: {
     [key: string]: {
       title: string;

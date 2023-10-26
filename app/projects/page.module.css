@@ -1,4 +1,14 @@
 .wrap {
-  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   min-height: calc(100vh - 2.5em);
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.projects h2 {
+  padding: 0.3em;
 }
