@@ -66,15 +66,11 @@ const ProjectsContent: React.FunctionComponent<ProjectsContentProps> = ({
     <>
       <div
         className={styles.wrap}
-        // className={show ? `${styles.wrap} ${styles.wrapShow}` : styles.wrap}
         style={hovered ? customStyleHovered : customStyle}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div className={styles.btn}>
-          {/* <button onClick={() => setShow(!show)}>
-            {show ? btnLess : btnMore}
-          </button> */}
           <LangButton
             active={!show}
             onClick={() => setShow(!show)}

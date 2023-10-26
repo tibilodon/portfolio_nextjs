@@ -1,31 +1,11 @@
-.wrap {
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* display: grid;
-  place-items: center;
-  align-content: center; */
-  /* min-width: 100%;
-  min-height: calc(100vh - 2.5em); */
-}
-
 .hidden {
-  /* width: 100%;
-  min-height: 100%; */
   filter: blur(5px);
   transform: translateX(-70%);
-
-  /* width: 200px;
-  height: 200px; */
-  /* background-color: lightblue; */
-  /* margin: 20px; */
   opacity: 0.5;
   transition: all 0.5s;
 }
 
 .show {
-  /* width: 100%;
-  min-height: calc(100vh - 2.5em); */
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);

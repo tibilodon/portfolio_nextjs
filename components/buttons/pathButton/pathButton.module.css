@@ -1,10 +1,4 @@
-.wrap {
-  /* width: 3em; */
-}
-
 .inactive {
-  /* margin-left: 1em; */
-  /* padding: 0.5em; */
   color: var(--inactive);
   font-weight: 600;
   cursor: pointer;
@@ -14,14 +8,12 @@
 }
 
 .inactive:hover {
-  /* border-bottom: 1px solid #333; */
   color: var(--black);
   padding: 0 0.5em 0 0.5em;
 }
 .active {
   border-bottom: 1px solid var(--black);
   color: var(--black);
-  /* margin-left: 1em; */
   font-weight: 600;
   cursor: pointer;
 }

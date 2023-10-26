@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
-import { LangOption } from "@/utils/commonTypes";
 import prisma from "@/utils/prismaClient";
 
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    console.log("data", data);
     const save = await prisma.contact.create({
       data: {
         name: data.name,
@@ -16,7 +14,15 @@ export async function POST(request: Request) {
     });
     console.log("saved", save);
   } catch (error) {
-    console.log("error mate", error);
+    //create error log
+    console.log("--ERROR--", error);
+    await prisma.logs.create({
+      data: {
+        title: `--ERROR--, ${error}`,
+        file_name: "app/submit/route.ts",
+        line_number: 5,
+      },
+    });
   }
 
   // Return a response

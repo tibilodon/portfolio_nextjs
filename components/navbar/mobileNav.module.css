@@ -12,12 +12,9 @@
   align-items: center;
   background-color: var(--background);
   padding: 0.2em;
-
-  /*sidebar is on 23*/
   z-index: 22;
 }
 .items {
-  /* min-width: 50%; */
   display: flex;
   justify-content: space-around;
 }

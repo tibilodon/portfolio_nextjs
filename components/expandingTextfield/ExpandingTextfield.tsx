@@ -30,6 +30,7 @@ const ExpandingTextfield: React.FunctionComponent<ExpandingTextfieldProps> = ({
     <>
       <div className={styles.wrap}>
         <textarea
+          required
           ref={textareaRef}
           id={id}
           value={val}

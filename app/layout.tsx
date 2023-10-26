@@ -78,26 +78,14 @@ export default function RootLayout({
                 lang={lang}
                 setLang={setLang}
               />
-              {/* <div onClick={sidebarHandler}>
-            <MessageButton />
             </div>
-            <SidebarButton
-            lang={lang}
-            setLang={setLang}
-            sidebar={sidebar}
-            setSidebar={setSidebar}
-          /> */}
-            </div>
-
             <div
               onClick={sidebarHandler}
               onWheel={sidebarHandler}
               onScroll={sidebarHandler}
               className="content"
             >
-              {/* <Suspense fallback={<Loading />}> */}
               <Modal />
-              {/* </Suspense> */}
               {children}
             </div>
           </ActivePathProvider>

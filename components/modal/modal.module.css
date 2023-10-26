@@ -1,10 +1,7 @@
 .wrap {
   border: 2px solid red;
   z-index: 24; /* Sit on top */
-  /* position: absolute; */
-  /* height: 100vh; */
 }
-/* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -43,8 +40,6 @@
 
   overflow: auto;
   background-color: #fefefe;
-  /* padding: 20px; */
-  /* border: 1px solid #888; */
   width: 80%; /* Could be more or less, depending on screen size */
 }
 .content {
@@ -55,10 +50,6 @@
 /* The Close Button */
 .close {
   padding: 0.3em;
-  /* color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold; */
 }
 
 .close:hover,

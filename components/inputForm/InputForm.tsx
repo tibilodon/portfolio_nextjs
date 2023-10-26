@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Form, LangOption } from "@/utils/commonTypes";
 import RegularButton from "../buttons/regular/RegularButton";
 import ExpandingTextfield from "../expandingTextfield/ExpandingTextfield";
+import { useRouter } from "next/navigation";
 
 type InputFormProps = {
   lang: LangOption;
@@ -19,6 +20,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
   textfield,
   button,
 }) => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [form, setForm] = useState<Form>({
@@ -60,9 +62,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
       });
 
       if (response.ok) {
-        setIsLoading(false);
         //TODO: Handle success
-        console.log("User added successfully");
 
         setForm({
           name: "",
@@ -70,6 +70,8 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
           message: "",
           language: lang,
         });
+        setIsLoading(false);
+        router.push("/thankyou");
       } else {
         // Handle errors
         console.error("Error adding user");
@@ -89,6 +91,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
         <form onSubmit={handleSubmit}>
           <span className={styles.inputWrap}>
             <input
+              required
               id="name"
               value={form.name}
               type={"text"}
@@ -99,6 +102,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
 
           <span className={styles.inputWrap}>
             <input
+              required
               id="email"
               value={form.email}
               type={"email"}

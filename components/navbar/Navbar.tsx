@@ -1,5 +1,4 @@
 import styles from "./navbar.module.css";
-
 import Image from "next/image";
 import menu_icon from "@/public/icons/menu.svg";
 import Link from "next/link";
@@ -7,8 +6,7 @@ import Sidebar from "../sidebar/Sidebar";
 import { useCallback } from "react";
 import PathButton from "../buttons/pathButton/PathButton";
 import { usePath } from "@/utils/activeContext";
-import { LangOption, MenuTexts } from "@/utils/commonTypes";
-import { engTexts, hunTexts } from "@/utils/content";
+import { LangOption } from "@/utils/commonTypes";
 import { findTextMenus } from "@/utils/helpers";
 import Loading from "@/app/loading";
 import SlideWrapper from "../slideWrapper/SlideWrapper";
@@ -32,10 +30,6 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
     setSidebar(!sidebar);
   }, [sidebar, setSidebar]);
 
-  // const killme: React.CSSProperties = {
-  //   backgroundColor: "red",
-  //   padding: "1em",
-  // };
   if (!lang) {
     return <Loading />;
   }
@@ -71,9 +65,6 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
           <Link href="/contact" as="/contact">
             <PathButton label="contact" text={findTextMenus(lang, "contact")} />
           </Link>
-          {/* <Link href="/test" as="/test">
-            <button style={killme}>test</button>
-          </Link> */}
         </div>
       </div>
       <SlideWrapper show={sidebar}>

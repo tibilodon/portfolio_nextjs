@@ -1,5 +1,4 @@
 .wrap {
-  /* border: 2px solid red; */
   min-height: 2em;
   overflow: hidden;
   position: fixed;
@@ -12,15 +11,8 @@
   justify-content: space-between;
   align-items: center;
   z-index: 22;
-
-  /* background-color: #b6b6b6; */
 }
-/* .sidebar {
-  border: 3px solid green;
-  margin-left: 1em;
-} */
 .items {
-  /* border: 2px solid purple; */
   min-width: 70%;
   display: flex;
   justify-content: space-around;

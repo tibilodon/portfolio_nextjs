@@ -42,7 +42,6 @@ export default async function Work() {
                     )
                 )}
               </ExpandContent>
-              {/* <p>{blueant.duration}</p> */}
               <p>{blueant.reasonOfLeaving}</p>
             </WorkContentWrapper>
             {/*agrohof*/}
@@ -53,7 +52,6 @@ export default async function Work() {
                 <p>{agroHof.desc}</p>
               </ExpandContent>
               <p>{agroHof.tasks}</p>
-              {/* <p>{agroHof.duration}</p> */}
               <p>{agroHof.reasonOfLeaving}</p>
             </WorkContentWrapper>
             {/*kobe*/}
@@ -64,7 +62,6 @@ export default async function Work() {
                 <p>{kobe.desc}</p>
               </ExpandContent>
               <p>{kobe.tasks}</p>
-              {/* <p>{kobe.duration}</p> */}
               <p>{kobe.reasonOfLeaving}</p>
             </WorkContentWrapper>
             <div className={styles.download}>

@@ -25,10 +25,7 @@ const SidebarButton: React.FunctionComponent<SidebarButtonProps> = ({
 
   return (
     <>
-      <div
-        className={styles.wrap}
-        // onClick={sidebar === true ? handler : undefined}
-      >
+      <div className={styles.wrap}>
         {!sidebar ? (
           <Image
             className={styles.icon}

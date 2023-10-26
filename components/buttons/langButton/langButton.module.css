@@ -1,5 +1,4 @@
 .wrap {
-  /* border: 2px solid black; */
   display: flex;
   height: 100%;
 }
@@ -18,7 +17,6 @@
 }
 .active {
   background-color: var(--black);
-  /* color: var(--background); */
 }
 @media (hover: hover) {
   .button:hover {

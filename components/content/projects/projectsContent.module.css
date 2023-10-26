@@ -7,22 +7,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* transition: height 800ms ease-in-out; */
 }
 
 .btn {
   margin-left: 1em;
-  /* border: 2px solid red; */
 }
 .content {
   width: 100%;
   display: grid;
   grid-template-rows: 0fr;
-  /* transition: grid-template-rows 800ms; */
   transition: 800ms ease-in-out;
 }
 .show {
-  /* border: 1px solid var(--inactive); */
   width: 100%;
   padding: 0.8em;
   margin: 0.3em;

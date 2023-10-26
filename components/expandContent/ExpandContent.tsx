@@ -1,7 +1,6 @@
 "use client";
 import LangButton from "../buttons/langButton/LangButton";
 import styles from "./expandContent.module.css";
-import { LangOption } from "@/utils/commonTypes";
 import { useState, useEffect } from "react";
 import Loading from "@/app/loading";
 
@@ -51,7 +50,7 @@ const ExpandContent: React.FunctionComponent<ExpandContentProps> = ({
       }
     };
     selectLabel();
-  }, [expand]);
+  }, [expand, lang]);
 
   if (label === "") {
     return <Loading />;
@@ -60,9 +59,6 @@ const ExpandContent: React.FunctionComponent<ExpandContentProps> = ({
   return (
     <>
       <div className={styles.wrap}>
-        {/* <span className={styles.btn} onClick={handler}>
-          {label}
-        </span> */}
         <LangButton active={!expand} onClick={handler} text={label} />
         <div className={setStyle()}>
           <div className={styles.content}>{children}</div>

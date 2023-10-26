@@ -4,16 +4,10 @@ import { useState } from "react";
 import { AboutTextsLong, Technologies } from "@/utils/commonTypes";
 
 type ContentProps = {
-  // label: string;
-  // content: string;
   data: AboutTextsLong;
 };
 
-const Content: React.FunctionComponent<ContentProps> = ({
-  // content,
-  // label,
-  data,
-}) => {
+const Content: React.FunctionComponent<ContentProps> = ({ data }) => {
   const [show, setShow] = useState<boolean>(false);
   const [val, setVal] = useState<string>("");
   const [current, setCurrent] = useState<string>("");

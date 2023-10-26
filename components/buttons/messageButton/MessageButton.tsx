@@ -3,14 +3,6 @@ import icon from "@/public/icons/message.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-// export const MessageButton: React.FunctionComponent = () => {
-//   return (
-//     <div className={styles.wrap}>
-//       <Image src={icon} alt="message icon" />
-//     </div>
-//   );
-// };
-
 const MessageButton: React.FunctionComponent = () => {
   return (
     <div className={styles.wrap}>

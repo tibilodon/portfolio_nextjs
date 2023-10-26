@@ -56,11 +56,6 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
             <Link onClick={collapseHandler} href={"/about"} as={"/about"}>
               <PathButton label="about" text={findTextMenus(lang, "about")} />
             </Link>
-            {/* <div className={styles.mobile}>
-            <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>
-            <PathButton text="Contact" />
-            </Link>
-          </div> */}
             <Link onClick={collapseHandler} href={"/work"} as={"/work"}>
               <PathButton label="work" text={findTextMenus(lang, "work")} />
             </Link>

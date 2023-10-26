@@ -33,8 +33,6 @@ export default async function Projects() {
                     {project[projKey].map((item, itemIndex) => (
                       <div className={styles.projects} key={itemIndex}>
                         <h2>{item.title}</h2>
-                        {/* <p>{item.desc}</p> */}
-
                         <ProjectsContent
                           btnLess={buttonLess}
                           btnMore={buttonMore}

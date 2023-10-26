@@ -21,15 +21,6 @@ export const usePath = () => {
   return useContext(ActiveContext);
 };
 
-// const getCurrentLang = async () => {
-//   const res = await getCookie("lang");
-//   if (res?.value) {
-//     return res?.value;
-//   } else {
-//     return "eng";
-//   }
-// };
-
 export default function ActivePathProvider({ children }: ProviderProps) {
   const [path, setPath] = useState<string>("");
 

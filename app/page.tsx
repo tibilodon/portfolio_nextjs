@@ -1,10 +1,8 @@
 import styles from "./page.module.css";
 import { Metadata } from "next";
-// import prisma from "@/utils/prismaClient";
 import Image from "next/image";
 import portrait from "@/public/images/tib_jpg.jpg";
 import Loading from "./loading";
-// import { Suspense } from "react";
 import { getCookie } from "@/utils/cookieActions";
 
 //pages for smooth scrolling
@@ -22,10 +20,6 @@ export const metadata: Metadata = {
   description: "Home page",
 };
 
-// enum Language {
-//   ENG = "ENG",
-//   HUN = "HUN",
-// }
 export type Details = {
   id: number;
   heading: string;
@@ -58,7 +52,6 @@ export default async function Home() {
               </div>
               <Image
                 className={styles.image}
-                //  height={604} width={395}
                 src={portrait}
                 alt="portrait picture"
                 priority

@@ -35,10 +35,6 @@ const Modal: React.FunctionComponent = () => {
 
   return (
     <>
-      {/* <div className={styles.wrap}> */}
-      {/* <!-- Trigger/Open The Modal -->*/}
-      {/* <button onClick={modalHandler}>Open Modal</button> */}
-
       {/* 
 <!-- The Modal -->*/}
       <div className={isTnc === "true" ? styles.modal : styles.open}>
@@ -83,7 +79,6 @@ const Modal: React.FunctionComponent = () => {
           </div>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
 };

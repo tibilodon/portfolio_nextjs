@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import menu_icon from "@/public/icons/menu.svg";
 import Sidebar from "../sidebar/Sidebar";
-import home_icon from "@/public/icons/home.svg";
 import message_icon from "@/public/icons/message.svg";
 import { usePath } from "@/utils/activeContext";
 import { LangOption } from "@/utils/commonTypes";
