@@ -6,6 +6,7 @@ import {
   HomeTexts,
   Contact,
   Projects,
+  ThankYou,
 } from "@/utils/commonTypes";
 
 //sidebar, navbar
@@ -381,6 +382,15 @@ const hunProject: Projects = {
   ],
 };
 
+const engThankYou: ThankYou = {
+  title: "Thank You!",
+  content: "I will get back to you shortly.",
+};
+const hunThankYou: ThankYou = {
+  title: "Köszönöm!",
+  content: "Hamarosan válaszolni fogok leveledre.",
+};
+
 export {
   engTexts,
   hunTexts,
@@ -396,4 +406,6 @@ export {
   hunContact,
   engProject,
   hunProject,
+  engThankYou,
+  hunThankYou,
 };

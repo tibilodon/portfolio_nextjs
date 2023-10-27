@@ -11,6 +11,8 @@ import {
   hunContact,
   engProject,
   hunProject,
+  engThankYou,
+  hunThankYou,
 } from "@/utils/content";
 import {
   LangOption,
@@ -19,6 +21,7 @@ import {
   WorkExperience,
   Contact,
   Projects,
+  ThankYou,
 } from "@/utils/commonTypes";
 import { getCookie } from "./cookieActions";
 
@@ -77,6 +80,14 @@ const findProjectsContact = (lang: LangOption): Projects => {
     return hunProject;
   }
 };
+
+const findThankYouTexts = (lang: LangOption): ThankYou => {
+  if (lang === "eng") {
+    return engThankYou;
+  } else {
+    return hunThankYou;
+  }
+};
 export {
   findTextMenus,
   findTextAbout,
@@ -84,4 +95,5 @@ export {
   getCurrentLang,
   findTextContact,
   findProjectsContact,
+  findThankYouTexts,
 };

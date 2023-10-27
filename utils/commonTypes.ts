@@ -83,6 +83,11 @@ type Projects = {
   }[];
 };
 
+type ThankYou = {
+  title: string;
+  content: string;
+};
+
 export type {
   LangOption,
   MenuTexts,
@@ -96,4 +101,5 @@ export type {
   Form,
   Contact,
   Projects,
+  ThankYou,
 };

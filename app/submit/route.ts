@@ -4,7 +4,7 @@ import prisma from "@/utils/prismaClient";
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const save = await prisma.contact.create({
+    await prisma.contact.create({
       data: {
         name: data.name,
         email: data.email,
@@ -12,7 +12,6 @@ export async function POST(request: Request) {
         language: data.language.toUpperCase() ?? "ENG",
       },
     });
-    console.log("saved", save);
   } catch (error) {
     //create error log
     console.log("--ERROR--", error);

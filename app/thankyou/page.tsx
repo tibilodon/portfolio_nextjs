@@ -1,22 +1,26 @@
-"use client";
-import styles from "./page.module.css";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import ThankYouContent from "@/components/content/thankYou/ThankYouContent";
+import { Metadata } from "next";
+import { getCurrentLang, findThankYouTexts } from "@/utils/helpers";
+import { LangOption, ThankYou } from "@/utils/commonTypes";
+import Loading from "../loading";
 
-const ThankYou = () => {
-  const router = useRouter();
-  useEffect(() => {
-    setTimeout(() => {
-      router.push("/");
-    }, 10000);
-  });
-
-  return (
-    <div className={styles.wrap}>
-      <h1>Thank You!</h1>
-      <h3>I will get back to you shortly.</h3>
-    </div>
-  );
+export const metadata: Metadata = {
+  title: "Thank You!",
+  description: "Thank You page",
 };
 
-export default ThankYou;
+export default async function Thanks() {
+  const lang = await getCurrentLang();
+  const thanksContent: ThankYou = findThankYouTexts(lang as LangOption);
+
+  const { title, content } = thanksContent;
+
+  if (!thanksContent) {
+    return <Loading />;
+  }
+  return (
+    <>
+      <ThankYouContent title={title} content={content} />
+    </>
+  );
+}
