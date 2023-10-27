@@ -18,6 +18,7 @@
 
 .backBtn {
   margin: 0.2em;
+  cursor: pointer;
 }
 .items {
   gap: 1em;

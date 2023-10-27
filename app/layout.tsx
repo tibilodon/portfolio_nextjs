@@ -4,11 +4,9 @@ import "./globals.css";
 import { Open_Sans } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import MobileNav from "@/components/navbar/MobileNav";
-import MessageButton from "@/components/buttons/messageButton/MessageButton";
 
 import { useState, useEffect, Suspense } from "react";
 import { createCookie, getCookie } from "@/utils/cookieActions";
-import SidebarButton from "@/components/buttons/sidebarButton/SidebarButton";
 import Loading from "./loading";
 import { LangOption } from "@/utils/commonTypes";
 import Modal from "@/components/modal/Modal";

@@ -40,7 +40,7 @@ const Navbar: React.FunctionComponent<NavbarProps> = ({
         className={styles.wrap}
         onClick={sidebar === true ? handler : undefined}
       >
-        <div>
+        <div className={styles.menu}>
           {!sidebar ? (
             <Image onClick={handler} src={menu_icon} alt="menu icon" priority />
           ) : null}

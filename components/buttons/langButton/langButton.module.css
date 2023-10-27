@@ -9,6 +9,7 @@
   width: 100%;
 }
 .button {
+  cursor: pointer;
   background-color: var(--inactive);
   color: var(--background);
   transition: background-color 800ms;

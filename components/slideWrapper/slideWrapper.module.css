@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: -100%;
-  transition: 850ms;
+  transition: 800ms;
 }
 .show {
   left: 0;
