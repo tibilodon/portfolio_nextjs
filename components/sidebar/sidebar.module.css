@@ -8,6 +8,7 @@
   border: 1px solid var(--inactive);
   z-index: 23;
   position: fixed;
+  top: 0;
 }
 .hero {
   height: 100%;
@@ -18,7 +19,7 @@
 
 .backBtn {
   /* top: 2em; */
-  margin: 4em 0.2em;
+  margin: 0.2em;
   cursor: pointer;
 }
 .items {
