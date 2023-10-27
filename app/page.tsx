@@ -16,8 +16,10 @@ import { engHomeTexts, hunHomeTexts } from "@/utils/content";
 import { HomeTexts } from "@/utils/commonTypes";
 
 export const metadata: Metadata = {
-  title: "Home",
-  description: "Home page",
+  // title: "Home",
+  // description: "Home page",
+  title: `Tibor Vigh's Portfolio`,
+  description: `Tibor's developer portfolio website`,
 };
 
 export type Details = {

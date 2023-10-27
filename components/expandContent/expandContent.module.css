@@ -11,13 +11,13 @@
   grid-template-rows: 0fr;
   transition: grid-template-rows 800ms;
 }
-.content {
-  overflow: hidden;
-}
 .show {
   width: 100%;
 
   grid-template-rows: 1fr;
+}
+.content {
+  overflow: hidden;
 }
 
 @media (hover: hover) {
