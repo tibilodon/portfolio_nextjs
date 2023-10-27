@@ -51,7 +51,6 @@ type WorkExperience = {
       }[];
     }[];
     duration: string;
-    reasonOfLeaving: string;
   };
 }[];
 

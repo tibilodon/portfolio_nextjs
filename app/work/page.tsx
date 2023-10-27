@@ -12,22 +12,55 @@ export const metadata: Metadata = {
 export default async function Work() {
   const content = await findTextWork();
   const currentLang = await getCurrentLang();
+  //quick lang related fixes
+  const title = (): string => {
+    if (currentLang === "eng") {
+      return "Work";
+    }
+    if (currentLang === "hun") {
+      return "Tapasztalat";
+    } else {
+      return "Work";
+    }
+  };
+
+  const project = (): string => {
+    if (currentLang === "eng") {
+      return "Projects";
+    }
+    if (currentLang === "hun") {
+      return "Projektek";
+    } else {
+      return "Projects";
+    }
+  };
+
+  const label = (): string => {
+    if (currentLang === "eng") {
+      return "Download CV";
+    }
+    if (currentLang === "hun") {
+      return "Önéletrajz letöltése";
+    } else {
+      return "Download CV";
+    }
+  };
   return (
     <>
       <div className={styles.wrap}>
-        <h1>Work</h1>
+        <h1>{title()}</h1>
         {content.map(({ blueant, agroHof, kobe }, index: number) => (
           <div key={index}>
             {/*blueant*/}
             <WorkContentWrapper duration={blueant.duration}>
               <h2>{blueant.company}</h2>
               <p>{blueant.position}</p>
+              <p>{blueant.tasks}</p>
               <ExpandContent lang={currentLang}>
                 <p>{blueant.desc}</p>
               </ExpandContent>
-              <p>{blueant.tasks}</p>
               {/*blueant projects*/}
-              <h3>Projects</h3>
+              <h3>{project()}</h3>
               <ExpandContent lang={currentLang}>
                 {blueant.projects.map(
                   ({ labely, emailTemplatingApp }, j: number) =>
@@ -42,27 +75,24 @@ export default async function Work() {
                     )
                 )}
               </ExpandContent>
-              <p>{blueant.reasonOfLeaving}</p>
             </WorkContentWrapper>
             {/*agrohof*/}
             <WorkContentWrapper duration={agroHof.duration}>
               <h2>{agroHof.company}</h2>
               <p>{agroHof.position}</p>
+              <p>{agroHof.tasks}</p>
               <ExpandContent lang={currentLang}>
                 <p>{agroHof.desc}</p>
               </ExpandContent>
-              <p>{agroHof.tasks}</p>
-              <p>{agroHof.reasonOfLeaving}</p>
             </WorkContentWrapper>
             {/*kobe*/}
             <WorkContentWrapper duration={kobe.duration}>
               <h2>{kobe.company}</h2>
               <p>{kobe.position}</p>
+              <p>{kobe.tasks}</p>
               <ExpandContent lang={currentLang}>
                 <p>{kobe.desc}</p>
               </ExpandContent>
-              <p>{kobe.tasks}</p>
-              <p>{kobe.reasonOfLeaving}</p>
             </WorkContentWrapper>
             <div className={styles.download}>
               <a
@@ -70,7 +100,7 @@ export default async function Work() {
                 target="_blank"
                 href={process.env.CV_URL}
               >
-                <RegularButton label={"Download CV"} />
+                <RegularButton label={label()} />
               </a>
             </div>
           </div>

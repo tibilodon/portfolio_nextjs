@@ -96,7 +96,7 @@ const hunAboutLongTexts: AboutTextsLong = [
       react:
         "Az elterjedtsége és komponens alapú megközelítése miatt, az elsődleges frontend keretrendszer amit web-es alapú projektekhez használok.",
       nodejs:
-        "A tiszta frontend alapú applikációk során hamar falakba ütköztem az adatbázis hiánya miatt. Elsődlegesen Firebase-t használtam, amivel könnyú elindítani dolgokat, de nem olyan gyors sem kényelmes mint api hívásokat intézni a backend felé.",
+        "A tiszta frontend alapú applikációk során hamar falakba ütköztem az adatbázis hiánya miatt. Elsődlegesen Firebase-t használtam, amivel könnyű elindítani dolgokat, de nem olyan gyors sem kényelmes mint api hívásokat intézni a backend felé.",
       sass: "A produktivitás mindig elsődleges a munkám során. A CSS sokkal komlikáltabb mint amilyennek tűnik, miért ne tenném könnyebbé egy jól bevált keretrendszerrel? A kérdés feltétele után elhatároztam, hogy SASS-t fogok használni, hogy megkönnyítsem az életem amikor a CSS az ellenkezőjére törekszik.",
       nextjs:
         "NodeJS + Express és React alkalmazások a fejlesztői környezetben probléma nélkül állhatnak készen a következő fázisra, viszont élesítéskor már több gond is felbukkanhat (például CORS error-ok). A keretrendszer hasznossága és könnyedsége miatt a NextJS-re esik a választásom minden alkalommal, hogy időt takarítsak meg. Nem beszélve arról, hogy a React csapat őket (is) említi mint ajánlott keretrendszert.",
@@ -144,8 +144,6 @@ const engWork: WorkExperience = [
         },
       ],
       duration: "6 months",
-      reasonOfLeaving:
-        "Apps were not released, therefore economically it was unsustainable to keep me employed.",
     },
     agroHof: {
       company: "Agrohof",
@@ -182,7 +180,6 @@ const engWork: WorkExperience = [
         },
       ],
       duration: "3 months",
-      reasonOfLeaving: "Career shift towards programming",
     },
 
     kobe: {
@@ -204,7 +201,7 @@ const engWork: WorkExperience = [
       and a half. At this time we moved back to the
       countryside, and a new opportunity arose.`,
       tasks:
-        "From checking all the details of customers against the central database to giving the green light for a newly purcashed car's insurance, I had multiple tasks I had to solve throughout the day. Even fixing co-workers computers and other small technical issues (such as easing the load on IT personals throughout a version transition).",
+        "From checking all the details of customers against the central database to giving the green light for a newly purcashed car's insurance, I had multiple tasks I had to solve throughout the day. Even fixing co-workers computers and other small technical issues (such as easing the load on IT personels throughout a version transition).",
       projects: [
         {
           none: [
@@ -217,7 +214,6 @@ const engWork: WorkExperience = [
         },
       ],
       duration: "2 years",
-      reasonOfLeaving: "Career shift towards programming",
     },
   },
 ];
@@ -261,16 +257,14 @@ const hunWork: WorkExperience = [
           ],
         },
       ],
-      duration: "6 months",
-      reasonOfLeaving:
-        "A fejlesztett applikációk nem kerültek be a Shopify store-ba, így nem tudtak hozamot termelni, amely ellehetetlenítette az pozícióm fenntartását a cég részéről.",
+      duration: "6 hónap",
     },
     agroHof: {
       company: "Agrohof",
       position: "Hirdetés specialista",
-      desc: `A programozás iránti megszállottságom itt kezdődött. Miután munkahelyet váltottam (amely szintén ismétlődő feladatokból állt), felismertem, hogy ugyancsak ismétlődő feladatokkal kell szembenéznem. Mivel nyitottak voltak a probléma megoldására (és felgyorsítására) így egyből nekiugrottam. Felkerestem egy gyermekkori barátom, hogy egy script-et használva kiváltsam az ismétlődő "klikkeket". Az elképzelés egyszerűnek tűnt, de hamar felfedztem, hogy a megvalósítás sokkal komplexebb mint amilyennek tűnik. Az elkövetkező hetekben hirdetéseket és termékeket próbáltam minél elérhetőbbé tenni az weben. Sajnálatosan rá kellett jönnöm, hogy a programozás (ekkor még csak a webfejlesztést ismertem) sokkal jobban leköt mint a pozícióm, és webfejlesztővé akarok válni. Ennek érdekében benyújtottam a felmondásom és azóta is "kódolni" tanulok.`,
+      desc: `A programozás iránti megszállottságom itt kezdődött. Miután munkahelyet váltottam (amely szintén ismétlődő feladatokból állt), felismertem, hogy ugyancsak ismétlődő feladatokkal kell szembenéznem. Mivel nyitottak voltak a probléma megoldására (és felgyorsítására) így egyből nekiugrottam. Felkerestem egy gyermekkori barátom, hogy egy script-et használva kiváltsam az ismétlődő "klikkeket". Az elképzelés egyszerűnek tűnt, de hamar felfedeztem, hogy a megvalósítás sokkal komplexebb mint amilyennek tűnik. Az elkövetkező hetekben hirdetéseket és termékeket próbáltam minél elérhetőbbé tenni a weben. Sajnálatosan rá kellett jönnöm, hogy a programozás (ekkor még csak a webfejlesztést ismertem) sokkal jobban leköt mint a pozícióm, és webfejlesztővé akarok válni. Ennek érdekében benyújtottam a felmondásom és azóta is "kódolni" tanulok.`,
       tasks:
-        "Új hirdetések készítése és meglévőek módosítása, karbantartása megannyi webhelyen.",
+        "Új hirdetések készítése és meglévők módosítása, karbantartása megannyi webhelyen.",
       projects: [
         {
           none: [
@@ -282,14 +276,13 @@ const hunWork: WorkExperience = [
           ],
         },
       ],
-      duration: "3 months",
-      reasonOfLeaving: "Karrierváltás webfejlesztővé.",
+      duration: "3 hónap",
     },
 
     kobe: {
       company: "Köbe",
       position: "Aminisztrációs asszisztens",
-      desc: `Az első magyarországon végzett irodai munkám. Egy független, magyar biztosítási cégen belül végeztem sokrétő feladataim. A vezetőm felfedezte a lehetőséget és annyi feladatottba vezetett bele amennyibe csak tudott. Sok feladat ismétlődő volt és elvárás volt, hogy a betanított módon kerüljön elvégzésre. Szerencsére mivel a technológia mindig is érdekelt (és jól bánok a google-el, továbbá nem félek gyorsbillentyúket használni egy excel táblázatban) sikerült fellazítanom az addigi korlátokat és megmutatnom, hogy más (és gyorsabb) módokon is elvégezhetőek ugyanazok a munkafolyamatok. Így még több lehetőséget biztosítottak a mindannyiuk által használt (java alapú) szoftver funkcióinak elsajátítására. Amikor a COVID miatti home-office elterjedté vállt, az elsők között lehettem aki kipróbálhatta. Végül csak otthonról dolgoztam másfél évig, amikor is a fővárosból vidékre költöztünk és egy új munkalehetőséget kaptam.`,
+      desc: `Az első magyarországon végzett irodai munkám. Egy független, magyar biztosítási cégen belül végeztem sokrétű feladataimat. A vezetőm felfedezte a lehetőséget és annyi munkafolyamatba vezetett bele amennyibe csak tudott. Sok feladat ismétlődő volt és elvárás volt, hogy a betanított módon kerüljön elvégzésre. Szerencsére mivel a technológia mindig is érdekelt (és jól bánok a google-el, továbbá nem félek gyorsbillentyűket használni egy excel táblázatban) sikerült fellazítanom az addigi korlátokat és megmutatnom, hogy más (és gyorsabb) módokon is elvégezhetőek ugyanazok a munkafolyamatok. Így még több lehetőséget biztosítottak a mindannyiuk által használt (java alapú) szoftver funkcióinak elsajátítására. Amikor a COVID miatti home-office elterjedté vált, az elsők között lehettem aki kipróbálhatta. Végül csak otthonról dolgoztam másfél évig, amikor is a fővárosból vidékre költöztünk és egy új munkalehetőséget kaptam.`,
       tasks: `Vevők adatinak összevetésével a központi adatbázissal, újonan vásárolt gépjárművek forgalomba helyezése majd biztosításuk érvényesítése. Sokrétű feladataimon túl, például munkatársaim technikai problémait is kezeltem. Továbbá az IT részleg terhelését is próbáltam enyhíteni verzióváltásokat követően.`,
       projects: [
         {
@@ -302,8 +295,7 @@ const hunWork: WorkExperience = [
           ],
         },
       ],
-      duration: "2 years",
-      reasonOfLeaving: "Új lehetőség adódott.",
+      duration: "2 év",
     },
   },
 ];
@@ -350,7 +342,7 @@ const engProject: Projects = {
         {
           title: "This Portfolio site",
           desc: "Interactive and concise CV. Simplicity and a kind of logic that satisfies my standards made up the base idea for this website. I also wanted to get back into TypeScript and CSS, that is why the old website went through a complete overhaul and instead of using React, JS, CSS and Firebase, the website is using NextJS, TypeScript and custom CSS.",
-          url: "https://www.busyantllc.com/",
+          url: "https://tiborvigh.com/",
         },
       ],
     },

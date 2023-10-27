@@ -64,12 +64,12 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
       if (response.ok) {
         //TODO: Handle success
 
-        setForm({
-          name: "",
-          email: "",
-          message: "",
-          language: lang,
-        });
+        // setForm({
+        //   name: "",
+        //   email: "",
+        //   message: "",
+        //   language: lang,
+        // });
         // setIsLoading(false);
         router.push("/thankyou");
       } else {

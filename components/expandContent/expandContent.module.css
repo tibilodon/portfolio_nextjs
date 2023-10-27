@@ -17,6 +17,9 @@
   grid-template-rows: 1fr;
 }
 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
   overflow: hidden;
 }
 

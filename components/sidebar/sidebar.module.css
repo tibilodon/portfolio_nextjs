@@ -17,7 +17,8 @@
 }
 
 .backBtn {
-  margin: 0.2em;
+  /* top: 2em; */
+  margin: 2.5em 0.2em;
   cursor: pointer;
 }
 .items {
