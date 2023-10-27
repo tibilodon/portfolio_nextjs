@@ -45,6 +45,17 @@ export default async function Work() {
       return "Download CV";
     }
   };
+
+  const cv = (): string | undefined => {
+    if (currentLang === "eng") {
+      return process.env.CV_URL_ENG;
+    }
+    if (currentLang === "hun") {
+      return process.env.CV_URL_HUN;
+    } else {
+      return process.env.CV_URL_ENG;
+    }
+  };
   return (
     <>
       <div className={styles.wrap}>
@@ -98,7 +109,7 @@ export default async function Work() {
               <a
                 rel="noreferrer noopener"
                 target="_blank"
-                href={process.env.CV_URL}
+                href={cv()}
               >
                 <RegularButton label={label()} />
               </a>
