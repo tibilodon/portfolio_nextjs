@@ -55,7 +55,7 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
         // Options for the IntersectionObserver
         root: null, // Use the viewport as the root
         // rootMargin: "20px", // No margin
-        // threshold: 0.1, // Trigger when 50% of the observed element is visible
+        threshold: 0.01, // Trigger when 50% of the observed element is visible
       }
     );
 
