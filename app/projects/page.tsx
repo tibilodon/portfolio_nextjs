@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import styles from "./page.module.css";
 import { getCurrentLang, findProjectsContact } from "@/utils/helpers";
-import { LangOption, Projects } from "@/utils/commonTypes";
+import { LangOption, Projects as ProjectsType } from "@/utils/commonTypes";
 import Loading from "../loading";
 import ProjectsContent from "@/components/content/projects/ProjectsContent";
 
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 export default async function Projects() {
   const lang = await getCurrentLang();
-  const content: Projects = findProjectsContact(lang as LangOption);
+  const content: ProjectsType = findProjectsContact(lang as LangOption);
 
-  const { title, buttonLess, buttonMore, siteLabel, projects } = content;
+  const { title, buttonLess, buttonMore, siteLabel, projs } = content;
 
   if (!content) {
     return <Loading />;
@@ -25,7 +25,7 @@ export default async function Projects() {
         <h1>{title}</h1>
         <div className={styles.contentWrap}>
           <div>
-            {projects.map((project, index: number) => (
+            {projs.map((project, index: number) => (
               <div key={index}>
                 {Object.keys(project).map((projKey) => (
                   <div key={projKey}>

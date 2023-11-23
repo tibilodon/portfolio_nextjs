@@ -323,7 +323,7 @@ const engProject: Projects = {
   buttonMore: "See More",
   buttonLess: "See Less",
   siteLabel: "Visit Website",
-  projects: [
+  projs: [
     {
       hingyi: [
         {
@@ -355,7 +355,7 @@ const hunProject: Projects = {
   buttonMore: "Több",
   buttonLess: "Kevesebb",
   siteLabel: "Tovább a weboldalra",
-  projects: [
+  projs: [
     {
       hingyi: [
         {
