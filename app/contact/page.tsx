@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Loading from "../loading";
 import InputForm from "@/components/inputForm/InputForm";
 import { getCurrentLang, findTextContact } from "@/utils/helpers";
-import { LangOption, Contact } from "@/utils/commonTypes";
+import { LangOption, Contact as ContactType } from "@/utils/commonTypes";
 
 //only works with server components
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function Contact() {
   const lang = await getCurrentLang();
-  const content: Contact = findTextContact(lang as LangOption);
+  const content: ContactType = findTextContact(lang as LangOption);
 
   if (!content) {
     return <Loading />;

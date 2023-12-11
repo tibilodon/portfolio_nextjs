@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import Loading from "../loading";
 import Content from "@/components/content/about/AboutContent";
 import { findTextAbout } from "@/utils/helpers";
-import { About } from "@/utils/commonTypes";
+// import { About as AboutType } from "@/utils/commonTypes";
 
 export const metadata: Metadata = {
   title: "About",
