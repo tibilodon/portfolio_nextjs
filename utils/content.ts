@@ -107,6 +107,25 @@ const hunAboutLongTexts: AboutTextsLong = [
 
 const engWork: WorkExperience = [
   {
+    freelance: {
+      company: "Freelance Developer",
+      position: "Web developer",
+      desc: "Since I felt comfortable to develop fullstack applications, I have been trying to help people and small businesses to grow. Whether they asked for a webshop, or a minimalist landing page where You can also contact the company, or a fully custom written CMS system where they can edit the content of their website.",
+      tasks:
+        "Develop maintainable and long lasting custom codebases with the use of modern but stable technologies, and only use third-party packages where it is absolutely necessary.",
+      duration: "na",
+      projects: [
+        {
+          prompt: [
+            {
+              title: "See Projects Page",
+              url: "https://tiborvigh.com/projects",
+              desc: "NA",
+            },
+          ],
+        },
+      ],
+    },
     blueant: {
       company: "Blue-Ant Solutions",
       position: "Web Developer",
@@ -131,7 +150,7 @@ const engWork: WorkExperience = [
           checkoutExt: [
             {
               title: "Checkout extension app",
-              url: "unreleased",
+              url: "https://apps.shopify.com/partners/storefrontheroes",
               desc: `It was and integrated part of the Shopify store's checkout UI. When the user proceeded to checkout, shopify's own product recommendation and a custom logic was initiated to recommend products to the user (in a "You may also like this" fashion). If a recommended product was added, a new api call was sent based on the last product added to the cart and a new recommendation was presented by the UI. I had the oportunity to work with and use GraphQl besided REST Api calls.`,
             },
           ],
@@ -221,6 +240,25 @@ const engWork: WorkExperience = [
 
 const hunWork: WorkExperience = [
   {
+    freelance: {
+      company: "Szabadúszó programozó",
+      position: "Webfejlesztó",
+      desc: "Amióta magabiztosan tudok fullstack applikációkat fejleszteni, azóta próbálok segítséget nyújtani emberek és kisvállalkozásoknak segíteni. Akármi is volt a kérés, legyen az egy webshop, vagy minimalista főolal ahol kapcsolatba léphetnek a céggel, vagy egy tartalomkezelő rendszer ahol szerkeszthetik a weblap tartalmát.",
+      tasks:
+        "Fenntartható és időálló kódbázis fejlesztése modern, de stabil technológiák használatával, és csak elkerülhetetlen esetekben használni harmadik féltől származó kódcsomagot.",
+      duration: "na",
+      projects: [
+        {
+          prompt: [
+            {
+              title: "Tovább a Projektek oldalra",
+              url: "https://tiborvigh.com/projects",
+              desc: "NA",
+            },
+          ],
+        },
+      ],
+    },
     blueant: {
       company: "Blue-Ant Solutions",
       position: "Webfejlesztő",
@@ -332,6 +370,13 @@ const engProject: Projects = {
           url: "https://hingyi-meheszet.vercel.app",
         },
       ],
+      nekedBurkolok: [
+        {
+          title: "Neked Burkolok",
+          desc: "Personal portfolio website for a tiler business. The website is editable by the customer via its custom built CMS system, which is built by using NextJs, Supabase (for storage and database) and Typescript.",
+          url: "https://www.nekedburkolok.hu",
+        },
+      ],
       busyant: [
         {
           title: "Busy Ant LLC",
@@ -339,13 +384,13 @@ const engProject: Projects = {
           url: "https://www.busyantllc.com/",
         },
       ],
-      portfolio: [
-        {
-          title: "This Portfolio site",
-          desc: "Interactive and concise CV. Simplicity and a kind of logic that satisfies my standards made up the base idea for this website. I also wanted to get back into TypeScript and CSS, that is why the old website went through a complete overhaul and instead of using React, JS, CSS and Firebase, the website is using NextJS, TypeScript and custom CSS.",
-          url: "https://tiborvigh.com/",
-        },
-      ],
+      // portfolio: [
+      //   {
+      //     title: "This Portfolio site",
+      //     desc: "Interactive and concise CV. Simplicity and a kind of logic that satisfies my standards made up the base idea for this website. I also wanted to get back into TypeScript and CSS, that is why the old website went through a complete overhaul and instead of using React, JS, CSS and Firebase, the website is using NextJS, TypeScript and custom CSS.",
+      //     url: "https://tiborvigh.com/",
+      //   },
+      // ],
     },
   ],
 };
@@ -364,6 +409,13 @@ const hunProject: Projects = {
           url: "https://hingyi-meheszet.vercel.app",
         },
       ],
+      nekedBurkolok: [
+        {
+          title: "Neked Burkolok",
+          desc: "Magán portfólió weboldal egy burkolói vállalkozás részére. A weboldal szerkeszthető az ügyfél által, amelyet az egyedileg fejlesztett tartalomkezelő rendszer segítségével tud megtenni. A rendszer NextJs, Supabase (tárhely és adatbázis) és Typescript használatával íródott.",
+          url: "https://www.nekedburkolok.hu",
+        },
+      ],
       busyant: [
         {
           title: "Busy Ant LLC",
@@ -371,13 +423,13 @@ const hunProject: Projects = {
           url: "https://www.busyantllc.com/",
         },
       ],
-      portfolio: [
-        {
-          title: "Ez a portfolio",
-          desc: "Interaktív, összefoglaló önéletrajz. Az egyszerűség és az én elvárásaimnak megfelelő logikán volt a hangsúly. A TypeScript és a CSS újragyakorlása miatt teljes mértékben átírásra került a régi honlap, amely React, JS és Firebase alkotta keretrendszerben íródott. A weblap NextJS, TypeScript és egyedi CSS-el készült.",
-          url: "https://www.busyantllc.com/",
-        },
-      ],
+      // portfolio: [
+      //   {
+      //     title: "Ez a portfolio",
+      //     desc: "Interaktív, összefoglaló önéletrajz. Az egyszerűség és az én elvárásaimnak megfelelő logikán volt a hangsúly. A TypeScript és a CSS újragyakorlása miatt teljes mértékben átírásra került a régi honlap, amely React, JS és Firebase alkotta keretrendszerben íródott. A weblap NextJS, TypeScript és egyedi CSS-el készült.",
+      //     url: "https://www.busyantllc.com/",
+      //   },
+      // ],
     },
   ],
 };

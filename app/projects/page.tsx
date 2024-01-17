@@ -29,7 +29,6 @@ export default async function Projects() {
               <div key={index}>
                 {Object.keys(project).map((projKey) => (
                   <div key={projKey}>
-                    {/* <h2>{key}</h2> */}
                     {project[projKey].map((item, itemIndex) => (
                       <div className={styles.projects} key={itemIndex}>
                         <h2>{item.title}</h2>

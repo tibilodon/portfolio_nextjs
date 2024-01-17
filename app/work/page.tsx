@@ -4,6 +4,7 @@ import { findTextWork, getCurrentLang } from "@/utils/helpers";
 import ExpandContent from "@/components/expandContent/ExpandContent";
 import WorkContentWrapper from "@/components/workContentWrapper/WorkContentWrapper";
 import RegularButton from "@/components/buttons/regular/RegularButton";
+import Link from "next/link";
 export const metadata: Metadata = {
   title: "Work",
   description: "Work page",
@@ -60,8 +61,31 @@ export default async function Work() {
     <>
       <div className={styles.wrap}>
         <h1>{title()}</h1>
-        {content.map(({ blueant, agroHof, kobe }, index: number) => (
+        {content.map(({ blueant, agroHof, kobe, freelance }, index: number) => (
           <div key={index}>
+            {/*Freelance*/}
+            <WorkContentWrapper duration={freelance.duration}>
+              <h2>{freelance.company}</h2>
+              <p>{freelance.position}</p>
+              <p>{freelance.tasks}</p>
+              <ExpandContent lang={currentLang}>
+                <p>{freelance.desc}</p>
+              </ExpandContent>
+              <h3>{project()}</h3>
+
+              <ExpandContent lang={currentLang}>
+                <div>
+                  <Link href={"/projects"}>
+                    <strong style={{ textDecoration: "underline" }}>
+                      {currentLang === "hun"
+                        ? `Tovább a ${project()} oldalra`
+                        : `Go to ${project()}'s page`}
+                    </strong>{" "}
+                  </Link>{" "}
+                </div>
+              </ExpandContent>
+            </WorkContentWrapper>
+
             {/*blueant*/}
             <WorkContentWrapper duration={blueant.duration}>
               <h2>{blueant.company}</h2>
@@ -74,16 +98,35 @@ export default async function Work() {
               <h3>{project()}</h3>
               <ExpandContent lang={currentLang}>
                 {blueant.projects.map(
-                  ({ labely, emailTemplatingApp }, j: number) =>
-                    [...labely, ...emailTemplatingApp].map(
-                      (item, k: number) => (
-                        <div key={k}>
-                          <h4>{item.title}</h4>
-                          <p>{item.url}</p>
-                          <p>{item.desc}</p>
-                        </div>
-                      )
-                    )
+                  (
+                    {
+                      labely,
+                      checkoutExt,
+                      emailTemplatingApp,
+                      magentoConverter,
+                    },
+                    j: number
+                  ) =>
+                    [
+                      ...labely,
+                      ...checkoutExt,
+                      ...emailTemplatingApp,
+                      ...magentoConverter,
+                    ].map((item, k: number) => (
+                      <div key={k}>
+                        <h4>{item.title}</h4>
+                        <p>
+                          <a
+                            rel="noreferrer noopener"
+                            target="_blank"
+                            href={item.url}
+                          >
+                            {item.url}
+                          </a>
+                        </p>
+                        <p>{item.desc}</p>
+                      </div>
+                    ))
                 )}
               </ExpandContent>
             </WorkContentWrapper>
@@ -106,11 +149,7 @@ export default async function Work() {
               </ExpandContent>
             </WorkContentWrapper>
             <div className={styles.download}>
-              <a
-                rel="noreferrer noopener"
-                target="_blank"
-                href={cv()}
-              >
+              <a rel="noreferrer noopener" target="_blank" href={cv()}>
                 <RegularButton label={label()} />
               </a>
             </div>

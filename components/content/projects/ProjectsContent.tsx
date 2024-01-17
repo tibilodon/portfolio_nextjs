@@ -2,6 +2,7 @@
 import styles from "./projectsContent.module.css";
 import { useState } from "react";
 import hingyi from "@/public/images/hingyi.jpg";
+import neked from "@/public/images/neked.jpg";
 import busyant from "@/public/images/busyant.jpg";
 import portfolio from "@/public/images/portfolio.jpg";
 import placeholder from "@/public/images/placeholder.svg";
@@ -36,6 +37,8 @@ const ProjectsContent: React.FunctionComponent<ProjectsContentProps> = ({
         return busyant.src;
       case "portfolio":
         return portfolio.src;
+      case "nekedBurkolok":
+        return neked.src;
       default:
         return placeholder.src;
     }
