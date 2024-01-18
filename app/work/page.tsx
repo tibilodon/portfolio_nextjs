@@ -5,10 +5,39 @@ import ExpandContent from "@/components/expandContent/ExpandContent";
 import WorkContentWrapper from "@/components/workContentWrapper/WorkContentWrapper";
 import RegularButton from "@/components/buttons/regular/RegularButton";
 import Link from "next/link";
-export const metadata: Metadata = {
-  title: "Work",
-  description: "Work page",
-};
+import { getCookie } from "@/utils/cookieActions";
+
+// export const metadata: Metadata = {
+//   title: "Work",
+//   description: "Work page",
+// };
+
+export async function generateMetadata(): Promise<Metadata> {
+  // { params, searchParams }: Props,
+  // parent: ResolvingMetadata
+  // const id = params.id;
+  const lang = await getCookie("lang");
+
+  const title = lang?.value === "eng" ? "Work" : "Tapasztalat";
+  const description =
+    lang?.value === "eng" ? "Tibor Vigh | Work" : "Vigh Tibor | Tapasztalat";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: "https://tiborvigh.com/api/og",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+  };
+}
 
 export default async function Work() {
   const content = await findTextWork();

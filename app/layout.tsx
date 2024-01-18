@@ -36,7 +36,7 @@ export default function RootLayout({
       if (language?.value) {
         setLang(language.value as LangOption);
       } else {
-        setLang("eng");
+        setLang("hun");
       }
     };
     awaitCookie();

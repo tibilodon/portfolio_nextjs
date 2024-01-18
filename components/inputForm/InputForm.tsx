@@ -53,7 +53,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
 
     try {
       setIsLoading(true);
-      const response = await fetch("/api/submit", {
+      const response = await fetch("/api/submit/mail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,15 +62,6 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
       });
 
       if (response.ok) {
-        //TODO: Handle success
-
-        // setForm({
-        //   name: "",
-        //   email: "",
-        //   message: "",
-        //   language: lang,
-        // });
-        // setIsLoading(false);
         router.push("/thankyou");
       } else {
         // Handle errors

@@ -32,32 +32,30 @@ import { HomeTexts } from "@/utils/commonTypes";
 //   },
 // };
 
-type Props = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+// type Props = {
+//   params: { id: string };
+//   searchParams: { [key: string]: string | string[] | undefined };
+// };
+
 export async function generateMetadata(): Promise<Metadata> {
   // { params, searchParams }: Props,
   // parent: ResolvingMetadata
   // const id = params.id;
   const lang = await getCookie("lang");
-  return {
-    title:
-      lang?.value === "eng"
-        ? "Tibor Vigh | Web Developer"
-        : "Vigh Tibor | Webfejlesztő",
-    description:
-      lang?.value === "eng" ? "Tibor Vigh | Home page" : "Vigh Tibor | Főoldal",
 
+  const title =
+    lang?.value === "eng"
+      ? "Tibor Vigh | Web Developer"
+      : "Vigh Tibor | Webfejlesztő";
+  const description =
+    lang?.value === "eng" ? "Tibor Vigh | Home" : "Vigh Tibor | Főoldal";
+
+  return {
+    title,
+    description,
     openGraph: {
-      title:
-        lang?.value === "eng"
-          ? "Tibor Vigh | Web Developer"
-          : "Vigh Tibor | Webfejlesztő",
-      description:
-        lang?.value === "eng"
-          ? "Tibor Vigh | Home page"
-          : "Vigh Tibor | Főoldal",
+      title,
+      description,
       images: [
         {
           url: "https://tiborvigh.com/api/og",

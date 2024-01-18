@@ -41,7 +41,7 @@ const Modal: React.FunctionComponent = () => {
         {/*  <!-- Modal content -->*/}
         <div className={styles.modalContent}>
           <div className={styles.content}>
-            <h1> Cookie Usage Notice</h1>
+            <h1>Cookie Usage Notice</h1>
             <p>
               To enhance your experience on our website, we use cookies. These
               cookies are small pieces of data that are stored on your device.
