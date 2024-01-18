@@ -53,7 +53,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = ({
 
     try {
       setIsLoading(true);
-      const response = await fetch("/submit", {
+      const response = await fetch("/api/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
