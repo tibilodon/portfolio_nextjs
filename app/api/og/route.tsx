@@ -11,9 +11,9 @@ export async function GET() {
     const lang = await getCookie("lang");
 
     const title =
-      lang?.value === "hun"
-        ? "Vigh Tibor | Webfejlesztő"
-        : "Tibor Vigh | Web Developer";
+      lang?.value === "eng"
+        ? "Tibor Vigh | Web Developer"
+        : "Vigh Tibor | Webfejlesztő";
 
     const imageData = await fetch(
       new URL("../../../public/opengraph-image.png", import.meta.url)
