@@ -30,7 +30,7 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
     (val: LangOption) => {
       setLang(val);
     },
-    [lang, setLang]
+    [setLang]
   );
 
   const collapseHandler = useCallback(() => {

@@ -68,7 +68,15 @@ const ScrollWrap: React.FunctionComponent<ScrollWrapProps> = ({
       pathMatchRoute();
       observer.disconnect();
     };
-  }, []);
+  }, [
+    pathMatchRoute,
+    setAboutPath,
+    setContactPath,
+    setHomePath,
+    setProjectPath,
+    setWorkPath,
+    text,
+  ]);
 
   return (
     <div
