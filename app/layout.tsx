@@ -26,7 +26,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [lang, setLang] = useState<LangOption>(null);
+  const [lang, setLang] = useState<LangOption>("");
 
   //set "lang" @initial render
   useEffect(() => {

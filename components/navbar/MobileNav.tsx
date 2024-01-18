@@ -9,6 +9,7 @@ import message_icon from "@/public/icons/message.svg";
 import { usePath } from "@/utils/activeContext";
 import { LangOption } from "@/utils/commonTypes";
 import SlideWrapper from "../slideWrapper/SlideWrapper";
+
 type MobileNavProps = {
   sidebar: boolean;
   setSidebar: (sidebar: boolean) => void;
@@ -26,6 +27,7 @@ const MobileNav: React.FunctionComponent<MobileNavProps> = ({
   const handler = useCallback(() => {
     setSidebar(!sidebar);
   }, [sidebar, setSidebar]);
+
   return (
     <>
       <div

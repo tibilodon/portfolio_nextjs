@@ -1,4 +1,4 @@
-type LangOption = "hun" | "eng" | null;
+type LangOption = "hun" | "eng" | "";
 type TnC = "true" | "false" | null;
 type MenuTexts = {
   home: string;

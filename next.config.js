@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-// module.exports = nextConfig
-module.exports = {
-  experimental: {
-    serverActions: true,
+const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    dangerouslyAllowSVG: true,
   },
 };
+
+// module.exports = nextConfig
+module.exports = nextConfig;

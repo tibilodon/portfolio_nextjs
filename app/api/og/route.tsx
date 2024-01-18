@@ -2,16 +2,18 @@
 /* eslint-disable jsx-a11y/alt-text */
 // @ts-nocheck
 import { ImageResponse } from "next/og";
+import { getCookie } from "@/utils/cookieActions";
 
 export const runtime = "edge";
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url);
-    const hasTitle = searchParams.has("title");
-    const title = hasTitle
-      ? searchParams.get("title")
-      : "Vigh Tibor | Web Developer";
+    const lang = await getCookie("lang");
+
+    const title =
+      lang?.value === "hun"
+        ? "Vigh Tibor | Webfejlesztő"
+        : "Tibor Vigh | Web Developer";
 
     const imageData = await fetch(
       new URL("../../../public/opengraph-image.png", import.meta.url)
@@ -33,13 +35,14 @@ export async function GET(request: Request) {
               fontWeight: 600,
             }}
           >
-            <img src={imageData} height={160} width={300} />
+            <img src={imageData} height={180} width={300} />
             <div style={{ marginTop: 40 }}>{title}</div>
           </div>
         </>
       )
     );
   } catch (error) {
+    console.log("OG error", error);
     return new Response("Failed to generate OG Image", { status: 500 });
   }
 }

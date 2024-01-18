@@ -1,8 +1,23 @@
 "use client";
 import React, { createContext, useContext, useState } from "react";
-import { getCookie } from "./cookieActions";
+import { getCookie, createCookie } from "./cookieActions";
 
-const ActiveContext = createContext({
+type AppContextProviderType = {
+  path: string;
+
+  setHomePath: () => void;
+  setAboutPath: () => void;
+  setProjectPath: () => void;
+  setContactPath: () => void;
+  setWorkPath: () => void;
+  pathMatchRoute: () => void;
+  //TODO: fix type
+
+  sidebar: boolean;
+  sidebarHandler: () => void;
+};
+
+const ActiveContext = createContext<AppContextProviderType>({
   path: "/",
   setHomePath: () => {},
   setAboutPath: () => {},
@@ -10,7 +25,9 @@ const ActiveContext = createContext({
   setContactPath: () => {},
   setWorkPath: () => {},
   pathMatchRoute: () => {},
-  getCurrentLang: () => {},
+
+  sidebar: false,
+  sidebarHandler: () => {},
 });
 
 type ProviderProps = {
@@ -22,16 +39,11 @@ export const usePath = () => {
 };
 
 export default function ActivePathProvider({ children }: ProviderProps) {
-  const [path, setPath] = useState<string>("");
-
-  const getCurrentLang = async () => {
-    const res = await getCookie("lang");
-    if (res?.value) {
-      return res?.value;
-    } else {
-      return "eng";
-    }
+  const [sidebar, setSidebar] = useState<boolean>(false);
+  const sidebarHandler = (): void => {
+    setSidebar(false);
   };
+  const [path, setPath] = useState<string>("");
 
   const pathMatchRoute = () => {
     setPath("");
@@ -66,7 +78,9 @@ export default function ActivePathProvider({ children }: ProviderProps) {
         setWorkPath,
         setContactPath,
         pathMatchRoute,
-        getCurrentLang,
+
+        sidebar,
+        sidebarHandler,
       }}
     >
       {children}

@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import portrait from "@/public/images/tib_jpg.jpg";
 import Loading from "./loading";
@@ -15,12 +15,59 @@ import ScrollWrap from "@/components/scrollWrapper/ScrollWrap";
 import { engHomeTexts, hunHomeTexts } from "@/utils/content";
 import { HomeTexts } from "@/utils/commonTypes";
 
-export const metadata: Metadata = {
-  // title: "Home",
-  // description: "Home page",
-  title: `Tibor Vigh's Portfolio`,
-  description: `Tibor's developer portfolio website`,
+// export const metadata: Metadata = {
+//   title: "some title",
+//   description: "Hingyi Norbert - Burkoló oldala",
+//   metadataBase: new URL("https://tiborvigh.com/api/og"),
+//   openGraph: {
+//     title: "Burkoló - Hingyi Norbert",
+//     description: "Hingyi Norbert - Burkoló oldala",
+//     images: [
+//       {
+//         url: "https://tiborvigh.com/api/og",
+//         width: 1200,
+//         height: 630,
+//       },
+//     ],
+//   },
+// };
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 };
+export async function generateMetadata(): Promise<Metadata> {
+  // { params, searchParams }: Props,
+  // parent: ResolvingMetadata
+  // const id = params.id;
+  const lang = await getCookie("lang");
+  return {
+    title:
+      lang?.value === "eng"
+        ? "Tibor Vigh | Web Developer"
+        : "Vigh Tibor | Webfejlesztő",
+    description:
+      lang?.value === "eng" ? "Tibor Vigh | Home page" : "Vigh Tibor | Főoldal",
+
+    openGraph: {
+      title:
+        lang?.value === "eng"
+          ? "Tibor Vigh | Web Developer"
+          : "Vigh Tibor | Webfejlesztő",
+      description:
+        lang?.value === "eng"
+          ? "Tibor Vigh | Home page"
+          : "Vigh Tibor | Főoldal",
+      images: [
+        {
+          url: "https://tiborvigh.com/api/og",
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+  };
+}
 
 export type Details = {
   id: number;
