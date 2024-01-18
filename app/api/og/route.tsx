@@ -8,13 +8,14 @@ export const runtime = "edge";
 
 export async function GET() {
   try {
-    const lang = await getCookie("lang");
+    // const lang = await getCookie("lang");
 
-    const title =
-      lang?.value === "eng"
-        ? "Tibor Vigh | Web Developer"
-        : "Vigh Tibor | Webfejlesztő";
+    // const title =
+    //   lang?.value === "eng"
+    //     ? "Tibor Vigh | Web Developer"
+    //     : "Vigh Tibor | Webfejlesztő";
 
+    const title = "Vigh Tibor | Webfejlesztő";
     const imageData = await fetch(
       new URL("../../../public/opengraph-image.png", import.meta.url)
     ).then((res) => res.arrayBuffer());
