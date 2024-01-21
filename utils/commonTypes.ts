@@ -4,6 +4,7 @@ type MenuTexts = {
   home: string;
   about: string;
   projects: string;
+  services: string;
   work: string;
   contact: string;
 };

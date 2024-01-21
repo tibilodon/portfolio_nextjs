@@ -65,6 +65,15 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
                 text={findTextMenus(lang, "projects")}
               />
             </Link>
+            {/*services*/}
+            <Link onClick={collapseHandler} href={"/services"} as={"/services"}>
+              <PathButton
+                label="services"
+                text={findTextMenus(lang, "services")}
+              />
+            </Link>
+            {/*services*/}
+
             <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>
               <PathButton
                 label="contact"

@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: 900;
   gap: 1em;
   display: flex;
@@ -13,8 +13,8 @@
   z-index: 22;
 }
 .items {
-  min-width: 70%;
   display: flex;
+  width: 100%;
   justify-content: space-around;
   align-items: center;
 }

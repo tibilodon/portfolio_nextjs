@@ -1,15 +1,22 @@
 "use client";
-import React, { createContext, useContext, useState } from "react";
-import { getCookie, createCookie } from "./cookieActions";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react";
 
 type AppContextProviderType = {
   path: string;
+  setPath: Dispatch<SetStateAction<string>>;
 
   setHomePath: () => void;
   setAboutPath: () => void;
   setProjectPath: () => void;
   setContactPath: () => void;
   setWorkPath: () => void;
+  setServicePath: () => void;
   pathMatchRoute: () => void;
   //TODO: fix type
 
@@ -19,11 +26,13 @@ type AppContextProviderType = {
 
 const ActiveContext = createContext<AppContextProviderType>({
   path: "/",
+  setPath: () => {},
   setHomePath: () => {},
   setAboutPath: () => {},
   setProjectPath: () => {},
   setContactPath: () => {},
   setWorkPath: () => {},
+  setServicePath: () => {},
   pathMatchRoute: () => {},
 
   sidebar: false,
@@ -68,15 +77,21 @@ export default function ActivePathProvider({ children }: ProviderProps) {
     setPath("/contact");
   };
 
+  const setServicePath = () => {
+    setPath("/services");
+  };
+
   return (
     <ActiveContext.Provider
       value={{
         path,
+        setPath,
         setHomePath,
         setAboutPath,
         setProjectPath,
         setWorkPath,
         setContactPath,
+        setServicePath,
         pathMatchRoute,
 
         sidebar,

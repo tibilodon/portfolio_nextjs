@@ -10,27 +10,11 @@ import About from "./about/page";
 import Contact from "./contact/page";
 import Projects from "./projects/page";
 import Work from "./work/page";
+import Services from "./services/page";
 
 import ScrollWrap from "@/components/scrollWrapper/ScrollWrap";
 import { engHomeTexts, hunHomeTexts } from "@/utils/content";
 import { HomeTexts } from "@/utils/commonTypes";
-
-// export const metadata: Metadata = {
-//   title: "some title",
-//   description: "Hingyi Norbert - Burkoló oldala",
-//   metadataBase: new URL("https://tiborvigh.com/api/og"),
-//   openGraph: {
-//     title: "Burkoló - Hingyi Norbert",
-//     description: "Hingyi Norbert - Burkoló oldala",
-//     images: [
-//       {
-//         url: "https://tiborvigh.com/api/og",
-//         width: 1200,
-//         height: 630,
-//       },
-//     ],
-//   },
-// };
 
 // type Props = {
 //   params: { id: string };
@@ -91,7 +75,7 @@ export default async function Home() {
     <>
       {lang !== null ? (
         <>
-          <ScrollWrap text={"home"}>
+          <ScrollWrap>
             <div className={styles.wrap}>
               <div className={styles.text}>
                 <h1>{texts().heading}</h1>
@@ -105,16 +89,19 @@ export default async function Home() {
               />
             </div>
           </ScrollWrap>
-          <ScrollWrap text={"about"}>
+          <ScrollWrap>
             <About />
           </ScrollWrap>
-          <ScrollWrap text={"work"}>
+          <ScrollWrap>
             <Work />
           </ScrollWrap>
-          <ScrollWrap text={"projects"}>
+          <ScrollWrap>
             <Projects />
           </ScrollWrap>
-          <ScrollWrap text={"contact"}>
+          <ScrollWrap>
+            <Services />
+          </ScrollWrap>
+          <ScrollWrap>
             <Contact />
           </ScrollWrap>
         </>

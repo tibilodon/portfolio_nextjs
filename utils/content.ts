@@ -14,6 +14,7 @@ const hunTexts: MenuTexts = {
   home: "Főoldal",
   about: "Rólam",
   projects: "Projektek",
+  services: "Szolgáltatások",
   work: "Tapasztalat",
   contact: "Kapcsolat",
 };
@@ -21,6 +22,7 @@ const engTexts: MenuTexts = {
   home: "Home",
   about: "About",
   projects: "Projects",
+  services: "Services",
   work: "Work",
   contact: "Contact",
 };

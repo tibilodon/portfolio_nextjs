@@ -1,6 +1,7 @@
 "use client";
+import { useEffect } from "react";
 import styles from "./pathButton.module.css";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { usePath } from "@/utils/activeContext";
 type PathButtonProps = {
@@ -29,6 +30,7 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
   };
 
   const { path } = usePath();
+
   const markActive = (): string => {
     let style: string;
     switch (label) {
@@ -40,6 +42,9 @@ const PathButton: React.FunctionComponent<PathButtonProps> = ({
         break;
       case "projects":
         style = path === "/projects" ? "active" : "inactive";
+        break;
+      case "services":
+        style = path === "/services" ? "active" : "inactive";
         break;
       case "work":
         style = path === "/work" ? "active" : "inactive";
