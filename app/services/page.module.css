@@ -1,5 +1,21 @@
 .wrap {
-  min-height: calc(100vh - 2.5em);
-  border: 5px solid red;
+  min-height: calc(100vh - 3em);
   width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 1em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+@media (min-width: 500px) {
+  .content {
+    flex-direction: row;
+  }
 }

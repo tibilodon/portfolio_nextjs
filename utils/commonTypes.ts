@@ -63,6 +63,16 @@ type Contact = {
   button: string;
 };
 
+type Services = {
+  title: string;
+  hero: string;
+  description: string;
+  includes: string[];
+  alt_hero: string;
+  alt_description: string;
+  button: string;
+};
+
 type Form = {
   name: string;
   email: string;
@@ -103,4 +113,5 @@ export type {
   Contact,
   Projects,
   ThankYou,
+  Services,
 };

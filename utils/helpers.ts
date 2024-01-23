@@ -13,6 +13,10 @@ import {
   hunProject,
   engThankYou,
   hunThankYou,
+  engServices,
+  hunServices,
+  engShopServices,
+  hunShopServices,
 } from "@/utils/content";
 import {
   LangOption,
@@ -22,6 +26,7 @@ import {
   Contact,
   Projects,
   ThankYou,
+  Services,
 } from "@/utils/commonTypes";
 import { getCookie } from "./cookieActions";
 
@@ -39,6 +44,14 @@ const findTextContact = (lang: LangOption): Contact => {
     return engContact;
   } else {
     return hunContact;
+  }
+};
+
+const findTextServices = (lang: LangOption): Services[] => {
+  if (lang === "eng") {
+    return [engServices, engShopServices];
+  } else {
+    return [hunServices, hunShopServices];
   }
 };
 
@@ -96,4 +109,5 @@ export {
   findTextContact,
   findProjectsContact,
   findThankYouTexts,
+  findTextServices,
 };

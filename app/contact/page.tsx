@@ -13,9 +13,6 @@ import { getCookie } from "@/utils/cookieActions";
 // };
 
 export async function generateMetadata(): Promise<Metadata> {
-  // { params, searchParams }: Props,
-  // parent: ResolvingMetadata
-  // const id = params.id;
   const lang = await getCookie("lang");
 
   const title = lang?.value === "eng" ? "Contact" : "Kapcsolat";

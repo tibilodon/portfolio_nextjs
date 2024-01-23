@@ -7,6 +7,7 @@ import {
   Contact,
   Projects,
   ThankYou,
+  Services,
 } from "@/utils/commonTypes";
 
 //sidebar, navbar
@@ -445,6 +446,88 @@ const hunThankYou: ThankYou = {
   content: "Hamarosan válaszolni fogok leveledre.",
 };
 
+const engServices: Services = {
+  title: "Website plan",
+  hero: "Custom",
+  description:
+    "Not all websites are made equal. Any business need an up-to-date and effective website, which can offer the same experience on mobile, as well as on a larger screen. Request an enquiry tailored for your project!",
+  includes: [
+    "Help reserving the right domain and services",
+    "Multiple pages",
+    "Responsive mobile-friendly custom design",
+    "Logo design",
+    "Multiple languages",
+    "2 months free support",
+    "Easy future expansion",
+  ],
+  alt_hero: "Why Us",
+  alt_description:
+    "An idea can be developed into a website in matter of a couple of weeks. Our outstanding customer service and 2 months website aftercare makes sure, that you get what you dreamed about.",
+
+  button: "Get in touch",
+};
+const hunServices: Services = {
+  title: "Weboldal csomag",
+  hero: "Egyedi",
+  description:
+    "Nincs két weboldal amely teljes mértékben azonos. Bármilyen vállalkozás elengedhetetlen kelléke egy korszerű és hatékony weboldal, amely mobilon képes az összes funkciót ugyanolyan élményben átadni, mint nagyobb kijelzőkön. Kérj a Te igényeidnek megfelelő árajánlatot",
+  includes: [
+    "Segítség domain és egyéb szervizek foglalásban",
+    "Több oldal",
+    "Egyedi reszponzív, mobilbarát kinézet",
+    "Logó tervezés",
+    "Többnyelvű használat",
+    "2 hónap ingyenes támogatás",
+    "Jövőbeli bővítés lehetősége",
+  ],
+  alt_hero: "Miért?",
+
+  alt_description:
+    "Egy elképzelés akár pár hét alatt is weboldallá válhat. A kiemelkedő partnerszolgálatunk és a 2 hónapos ingyenes weboldal utángondozásunk gondoskodik arról, hogy azt kapd amit álmodtál.",
+  button: "Ajánlat kérése",
+};
+
+const engShopServices: Services = {
+  title: "Webshop plans",
+  hero: "Custom",
+  description:
+    "Stand out from the crowd with your custom Webshop and increase your sells! Get the most out of your webshop with the right SEO settings built in, that way your webshop will not only be performance and user experience oriented but maximizes the reach of your products.",
+  includes: [
+    "Help reserving the right domain and services",
+    "Multiple pages",
+    "Responsive mobile-friendly custom design",
+    "Logo design",
+    "Multiple languages",
+    "2 months free support",
+    "Easy future expansion",
+  ],
+  alt_hero: "Why Us",
+  alt_description:
+    "Building a webshop from the ground up can be tedious and time consuming. We take care of all the nuances (such as choosing a database provider) so You can continue focus on growing Your business.",
+
+  button: "Get in touch",
+};
+const hunShopServices: Services = {
+  title: "Webshop csomag",
+  hero: "Egyedi",
+  description:
+    "Tűnj ki a tömegből az egyedi webshop-oddal és növeld bevételed. Hozd ki a legtöbbet webshop-odból a megfelelő SEO beállításokkal amelyeket beépítünk, így az oldal nem csak teljesítmény és felhasználói élmény orientált lesz, de maximalizálja termékeid elérését.",
+  includes: [
+    "Segítség domain és egyéb szervizek foglalásban",
+    "Több oldal",
+    "Egyedi reszponzív, mobilbarát kinézet",
+    "Logó tervezés",
+    "Többnyelvű használat",
+    "2 hónap ingyenes támogatás",
+    "Jövőbeli bővítés lehetősége",
+  ],
+  alt_hero: "Miért?",
+  alt_description:
+    "Egy webshop felépítése fárasztó és hosszadalmas folyamat lehet. Mi gondoskodunk mindenről (például a megfelelő adatbázis kiválasztásáról), így neked továbbra is csak a vállalkozásodra kell fókuszálnod.",
+
+  button: "Ajánlat kérése",
+};
+
 export {
   engTexts,
   hunTexts,
@@ -462,4 +545,8 @@ export {
   hunProject,
   engThankYou,
   hunThankYou,
+  hunServices,
+  engServices,
+  engShopServices,
+  hunShopServices,
 };
