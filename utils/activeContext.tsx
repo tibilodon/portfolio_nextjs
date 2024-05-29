@@ -9,7 +9,7 @@ import React, {
 
 type AppContextProviderType = {
   path: string;
-  setPath: Dispatch<Action<string>>;
+  setPath: Dispatch<SetStateAction<string>>;
 
   setHomePath: () => void;
   setAboutPath: () => void;
