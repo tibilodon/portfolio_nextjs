@@ -66,12 +66,12 @@ const Sidebar: React.FunctionComponent<SidebarProps> = ({
               />
             </Link>
             {/*services*/}
-            <Link onClick={collapseHandler} href={"/services"} as={"/services"}>
+            {/* <Link onClick={collapseHandler} href={"/services"} as={"/services"}>
               <PathButton
                 label="services"
                 text={findTextMenus(lang, "services")}
               />
-            </Link>
+            </Link> */}
             {/*services*/}
 
             <Link onClick={collapseHandler} href={"/contact"} as={"/contact"}>

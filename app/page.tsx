@@ -10,7 +10,7 @@ import About from "./about/page";
 import Contact from "./contact/page";
 import Projects from "./projects/page";
 import Work from "./work/page";
-import Services from "./services/page";
+import Services from "./services/#page";
 
 import ScrollWrap from "@/components/scrollWrapper/ScrollWrap";
 import { engHomeTexts, hunHomeTexts } from "@/utils/content";
